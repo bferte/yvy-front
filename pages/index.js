@@ -1,6 +1,7 @@
 import { useSession, signOut } from 'next-auth/client'
 import styles from '../styles/Home.module.css'
 
+
 export default function Home() {
   const [session, loading] = useSession()
   return (

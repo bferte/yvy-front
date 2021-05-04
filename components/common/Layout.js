@@ -1,10 +1,14 @@
-
+import Navbar from '../common/Navbar'
+import Meta from '../common/Meta'
 
 const Layout = ({ children }) => {
     return (
-        <div className="content">
-      gbdfjhg
-        </div>
+        <>
+          <Meta/>
+          <header>
+            <Navbar/>
+          </header>
+        </>
      )
 }
 
