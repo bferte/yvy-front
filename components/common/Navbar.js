@@ -2,6 +2,7 @@ import Link from 'next/link'
 
 
 
+
 const Navbar = () => {
 
     return (
@@ -42,13 +43,17 @@ const Navbar = () => {
                 color : green
             }
 
+            li#homeLink {
+                color: #EFAA45
+            }
+
             `}</style>
             <nav className="navbar">
                 <img className="logoNavbar" src="logoYvy.svg" alt="Logo YVY"/>
                 <ul>
-                    <li><Link id="ac" href="/" passHref>Accueil</Link></li>
-                    <li><Link href="/">Notre concept</Link></li>
-                    <li><Link href="/">Nos paniers</Link></li>
+                    <li><Link href="/"><a style={{ color: 'var(--yellow)' }}>Accueil</a></Link></li>
+                    <li><Link href="/concept">Notre concept</Link></li>
+                    <li><Link href="/baskets">Nos paniers</Link></li>
                     <li><Link href="/">Nos producteurs</Link></li>
                     <li><Link href="/">Blog</Link></li>
                     <li><Link href="/">Connexion</Link></li>
