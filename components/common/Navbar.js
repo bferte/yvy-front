@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react'
 
 import { useSession, signOut } from 'next-auth/client'
 import LinkMenu from './LinkMenu'
+import Button from './Button'
 
 
 
@@ -74,6 +75,7 @@ const Navbar = () => {
             ul {
                 display : flex;
                 justify-content: space-around;
+                align-items: center;
                 list-style-type: none;
 
             }
@@ -116,7 +118,7 @@ const Navbar = () => {
                                     </a>
                                 </div>
                                 :
-                                <Link href="/login"><a>Connexion</a></Link>
+                                <Button width='126px'>Connexion</Button>
                             }
                         </div>
 

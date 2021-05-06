@@ -8,18 +8,19 @@ const Button = ({children,...props}) => {
             <style jsx>{`
             button {
                 border-radius: 24px;
-                width: 185px;
+                margin: ${props.margin ? props.margin : '0px'};
+                width: ${props.width ? props.width : '185px'};
                 height: 42px;
                 font-family: "hero new";
                 color: ${props.color ? props.color : 'white' };
-                background: ${props.backgroundColor ? 'var(--lightGreen)' : 'var(--lightGreen)'};
-                border: none
+                background: ${props.backgroundColor ? props.backgroundColor : 'var(--lightGreen)'};
+                border: none;
                 
             }
 
             `}</style>
 
-            <button><a href="">{children}</a></button>
+            <button>{children}</button>
         </>
         
     )

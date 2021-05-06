@@ -13,7 +13,7 @@ export default function Home() {
         margin : auto;
         max-width : 1545px;
         }
-        .container {
+        .containerResume {
           display : flex;
           align-items : center;
           margin : 0 375px;
@@ -26,16 +26,22 @@ export default function Home() {
           width: 586px;
           margin-right: 85px
         }
+        h3 {
+          text-align: center;
+          font-weight: 400;
+          font-size: 35px;
+          margin-bottom: 20px
+        }
       
       `}</style>
       <div >
 
         <main className={styles.main}>
-          <div className="container">
+          <div className="containerResume">
             <div className="resume">
               <h2>Le plaisir de la bonne cuisine sans la corvée des courses !</h2>
               <p>Des bons produits locaux pour concocter des recettes simples et délicieuses, livrés dans votre entreprise, à partir de X,XX € par repas.</p>
-              <Button>Je créé un compte</Button>
+              <Button><a href="login">Je créé un compte</a></Button>
             </div>
             <svg xmlns="http://www.w3.org/2000/svg" width="435" height="480" viewBox="0 0 875 970">
               <g id="IMG" fill="#fff" stroke="#1a1a1a" stroke-width="1">
@@ -44,6 +50,21 @@ export default function Home() {
               </g>
             </svg>
 
+          </div>
+
+          <div className="containerBaskets">
+            <h3>Nos paniers du moment</h3>
+            <div className="navBaskets">
+              <ul>
+                <li>
+                  <Button width ="auto" margin="0 15px">Nos classiques</Button>
+                  <Button width ="auto" margin="0 15px">Nos végés</Button>
+                  <Button width ="auto" margin="0 15px">Nos lorem</Button>
+                  <Button width ="auto" margin="0 15px">Nos lorem</Button>
+                  <Button width ="auto" margin="0 15px">Nos lorem</Button>
+                </li>
+              </ul>
+            </div>
           </div>
 
           <p className={styles.description}>
