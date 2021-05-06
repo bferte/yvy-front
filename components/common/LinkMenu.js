@@ -8,6 +8,10 @@ const LinkMenu = ({children,...props}) => {
         a {color : ${props.activeKey === props.name ? 'var(--yellow)' : null}
 
         }
+        a:hover {color : ${props.activeKey === props.name ? 'var(--yellow)' : 'var(--lightGreen)'}
+
+        }
+
         `}</style>
 
         <div onClick={props.onClick}>
