@@ -63,6 +63,7 @@ const Navbar = () => {
             
             .logoNavbar {
                 height : 84px;
+                width : 200px;
                 margin-top: 16px
             }
             .navbar {

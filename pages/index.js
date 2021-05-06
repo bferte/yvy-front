@@ -1,6 +1,8 @@
 import { useSession, signOut } from 'next-auth/client'
 import styles from '../styles/Home.module.css'
 
+import Button from '../components/common/Button'
+
 
 export default function Home() {
   const [session, loading] = useSession()
@@ -33,7 +35,7 @@ export default function Home() {
             <div className="resume">
               <h2>Le plaisir de la bonne cuisine sans la corvée des courses !</h2>
               <p>Des bons produits locaux pour concocter des recettes simples et délicieuses, livrés dans votre entreprise, à partir de X,XX € par repas.</p>
-              <button></button>
+              <Button>Je créé un compte</Button>
             </div>
             <svg xmlns="http://www.w3.org/2000/svg" width="435" height="480" viewBox="0 0 875 970">
               <g id="IMG" fill="#fff" stroke="#1a1a1a" stroke-width="1">
