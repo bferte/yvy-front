@@ -57,11 +57,11 @@ export default function Home() {
             <div className="navBaskets">
               <ul>
                 <li>
-                  <Button width ="auto" margin="0 15px">Nos classiques</Button>
-                  <Button width ="auto" margin="0 15px">Nos végés</Button>
-                  <Button width ="auto" margin="0 15px">Nos lorem</Button>
-                  <Button width ="auto" margin="0 15px">Nos lorem</Button>
-                  <Button width ="auto" margin="0 15px">Nos lorem</Button>
+                  <Button backgroundColor = 'var(--yellow)' width ="auto" margin="0 15px">Nos classiques</Button>
+                  <Button backgroundColor = 'var(--yellow)' width ="auto" margin="0 15px">Nos végés</Button>
+                  <Button backgroundColor = 'var(--yellow)' width ="auto" margin="0 15px">Nos lorem</Button>
+                  <Button backgroundColor = 'var(--yellow)' width ="auto" margin="0 15px">Nos lorem</Button>
+                  <Button backgroundColor = 'var(--yellow)' width ="auto" margin="0 15px">Nos lorem</Button>
                 </li>
               </ul>
             </div>
