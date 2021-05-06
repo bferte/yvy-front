@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { useState, useEffect } from 'react'
 
 import { useSession, signOut } from 'next-auth/client'
+import LinkMenu from './LinkMenu'
 
 
 
@@ -16,12 +17,15 @@ const Navbar = () => {
     let textColorConcept
     let textColor
 
+    const [activeKey, setActiveKey] = useState('')
+
 
     useEffect(() => {
 
         switch (currentLink) {
             case 'home':
                 textColorHome = { color: 'var(--yellow)' };
+                console.log('home-yellow')
                 break;
             case 'concept':
                 textColorConcept = { color: 'var(--yellow)' };
@@ -90,8 +94,8 @@ const Navbar = () => {
             <nav className="navbar">
                 <img className="logoNavbar" src="logoYvy.svg" alt="Logo YVY" />
                 <ul>
-                    <li><Link href="/"><a id='homeLink' style={textColorHome} onClick={() => setCurrentLink('home')}>Accueil</a></Link></li>
-                    <li><Link href="/concept"><a style={textColorConcept} onClick={() => setCurrentLink('concept')}>Notre concept</a></Link></li>
+                    <li><LinkMenu activeKey={activeKey} href="/" name='home' onClick={ () => setActiveKey('home')}>Accueil</LinkMenu></li>
+                    <li><LinkMenu activeKey={activeKey} href="/concept" name='concept' onClick={ () => setActiveKey('concept')}>Notre concept</LinkMenu></li>
                     <li><Link href="/baskets"><a>Nos paniers</a></Link></li>
                     <li><Link href="/"><a>Nos producteurs</a></Link></li>
                     <li><Link href="/"><a>Blog</a></Link></li>
@@ -99,10 +103,10 @@ const Navbar = () => {
                         <div>
                             {session && session.user ?
                                 <div>
-                                    <a href="/protected"> Profil Protected page</a>
+                                    <a href="/protected"> Profile </a>
                                     <a
                                         href={`/api/auth/signout`}
-                                        className={styles.button}
+                                        //className={styles.button}
                                         onClick={(e) => {
                                             e.preventDefault()
                                             signOut()
