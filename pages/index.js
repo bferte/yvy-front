@@ -32,6 +32,13 @@ export default function Home() {
           font-size: 35px;
           margin-bottom: 20px
         }
+        .containerImg {
+          display: flex;
+          justify-content: center;
+        }
+        .containerImg img {
+          margin: 38.5px
+        }
       
       `}</style>
       <div >
@@ -58,12 +65,25 @@ export default function Home() {
               <ul>
                 <li>
                   <Button backgroundColor = 'var(--yellow)' width ="auto" margin="0 15px">Nos classiques</Button>
+                </li>
+                <li>
                   <Button backgroundColor = 'var(--yellow)' width ="auto" margin="0 15px">Nos végés</Button>
-                  <Button backgroundColor = 'var(--yellow)' width ="auto" margin="0 15px">Nos lorem</Button>
-                  <Button backgroundColor = 'var(--yellow)' width ="auto" margin="0 15px">Nos lorem</Button>
+                </li>
+                <li>
+                  <Button backgroundColor = 'var(--yellow)' width ="auto" margin="0 15px">Nos lorem</Button> 
+                </li>
+                <li>
                   <Button backgroundColor = 'var(--yellow)' width ="auto" margin="0 15px">Nos lorem</Button>
                 </li>
+                <li>
+                  <Button backgroundColor = 'var(--yellow)' width ="auto" margin="0 15px">Nos lorem</Button>
+                </li>               
               </ul>
+            </div>
+            <div className="containerImg">
+              <img src="daria.png" alt="" />
+              <img src="julie.png" alt="" />
+              <img src="ella.png" alt="" />
             </div>
           </div>
 
