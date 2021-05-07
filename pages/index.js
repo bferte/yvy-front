@@ -12,6 +12,9 @@ export default function Home() {
       main {
         margin : auto;
         max-width : 1545px;
+        display:flex;
+        flex-direction: column;
+        align-items:center
         }
         .containerResume {
           display : flex;
@@ -26,6 +29,11 @@ export default function Home() {
           width: 586px;
           margin-right: 85px
         }
+        .containerBaskets {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
         h3 {
           text-align: center;
           font-weight: 400;
@@ -39,6 +47,29 @@ export default function Home() {
         .containerImg img {
           margin: 38.5px
         }
+        .navBaskets ul {
+          justify-content: center;
+        }
+
+        .howWork {
+          display: flex;
+          flex-direction: column;
+          text-align: center;
+
+
+        }
+        .howWork {
+          width:1000px
+        }
+        .ourProducers {
+          display: flex;
+          flex-direction: row;
+          max-width: 1100px;
+        }
+        .ourProducers iframe {
+          border-radius: 66px;
+        }
+      
       
       `}</style>
       <div >
@@ -84,6 +115,25 @@ export default function Home() {
               <img src="daria.png" alt="" />
               <img src="julie.png" alt="" />
               <img src="ella.png" alt="" />
+            </div>
+            <Button>Voir tous les paniers</Button>
+          </div>
+          <div className="howWork">
+            <h3>Comment ça marche</h3>
+            <h4>C’est simple comme bonjour</h4>
+            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed </p>
+          </div>
+          <svg width="1010" height="260">
+            <rect width="1000" height="250" stroke="black" fill="white" />
+          </svg>
+          <div className="ourProducers">
+            <div className="resumeProducer">
+              <h3>Nos producteurs</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim ducimus dicta distinctio quod, tempora neque atque deleniti deserunt quibusdam totam officiis sint. Illo ipsa rem rerum, mollitia fugiat vero sed.</p>
+              <Button>Voir tous les paniers</Button>
+            </div>
+            <div className="videoProducer">
+              <iframe width="560" height="315" src="https://www.youtube.com/embed/OVJEeXT78IE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>  
             </div>
           </div>
 
