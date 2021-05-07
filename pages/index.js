@@ -11,7 +11,7 @@ export default function Home() {
       <style global jsx>{`
       main {
         margin : auto;
-        max-width : 1545px;
+        /*max-width : 1545px;*/
         display:flex;
         flex-direction: column;
         align-items:center
@@ -69,6 +69,7 @@ export default function Home() {
         .ourProducers iframe {
           border-radius: 66px;
         }
+       
       
       
       `}</style>
@@ -135,6 +136,10 @@ export default function Home() {
             <div className="videoProducer">
               <iframe width="560" height="315" src="https://www.youtube.com/embed/OVJEeXT78IE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>  
             </div>
+          </div>
+          <div className="orangeContainer">
+           
+
           </div>
 
           <p className={styles.description}>
