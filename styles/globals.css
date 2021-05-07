@@ -6,7 +6,7 @@ body {
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   
   display: flex;
-  justify-content: center;
+ 
   align-items: center;
 
     --yellow: #EFAA45;
@@ -14,6 +14,8 @@ body {
     --darkGreen : #4C8468;
     --textBlack : #1A1A1A;
     --white : #FFFFFF;
+
+
 
 
 
