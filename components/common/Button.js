@@ -11,7 +11,7 @@ const Button = ({children,...props}) => {
                 margin: ${props.margin ? props.margin : '0px'};
                 width: ${props.width ? props.width : '185px'};
                 height: 42px;
-                font-family: "hero new";
+                font-family: "hero-new";
                 color: ${props.color ? props.color : 'white' };
                 background: ${props.backgroundColor ? props.backgroundColor : 'var(--lightGreen)'};
                 border: none;

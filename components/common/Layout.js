@@ -1,5 +1,6 @@
 import Navbar from '../common/Navbar'
 import Meta from '../common/Meta'
+import Footer from '../common/Footer'
 
 
 
@@ -7,14 +8,21 @@ import Meta from '../common/Meta'
 
 const Layout = ({ children }) => {
 
+
     return (
-        <>
+       
+      <>
+        <div className="root">
           <Meta/>
           <header>
             <Navbar/>
-            { children }
+            
           </header>
-        </>
+          { children }
+          
+        </div>
+        <Footer/>
+      </>  
      )
 }
 

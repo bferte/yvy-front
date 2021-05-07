@@ -33,6 +33,7 @@ export default function Home() {
           display: flex;
           flex-direction: column;
           align-items: center;
+          width:100%;
         }
         h3 {
           text-align: center;
@@ -45,6 +46,7 @@ export default function Home() {
           justify-content: center;
         }
         .containerImg img {
+          width: 28%;
           margin: 38.5px
         }
         .navBaskets ul {
