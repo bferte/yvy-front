@@ -43,6 +43,7 @@ const Footer = () => {
           margin-bottom: 0;
           color: var(--white);
           font-weight: 200;
+          font-size: 35px;
           text-align:left;
           
         }

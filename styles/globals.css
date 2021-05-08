@@ -34,6 +34,7 @@ body {
 
 
 .root {
+  width: 100%;
   max-width: 1174px;
   display: flex;
   flex-direction: column;

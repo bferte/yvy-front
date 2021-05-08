@@ -11,8 +11,10 @@ export default function Home() {
       <style global jsx>{`
       main {
         margin : auto;
-        /*max-width : 1545px;*/
+        width:100%;
+        max-width : 1545px;
         display:flex;
+        justify-content: center;
         flex-direction: column;
         align-items:center
         }
@@ -43,7 +45,8 @@ export default function Home() {
           text-align: center;
           font-weight: 400;
           font-size: 35px;
-          margin-bottom: 20px
+          margin-bottom: 20px;
+          margin-top:35px;
         }
         
         .containerImg {
@@ -94,8 +97,12 @@ export default function Home() {
           height: 343px
         }
         .orangeContainer {
-          width: 40%;
           height: 618px;
+          width: 100%;
+          background-image: url('orangeT.svg');
+          background-repeat: no-repeat;
+          background-size: cover;
+          background-position: center;
 
         }
        
@@ -170,6 +177,8 @@ export default function Home() {
           </div>
           <div className="orangeContainer">
           <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quod nesciunt at porro dignissimos voluptas, ipsa aut dolor natus commodi nihil placeat, temporibus laborum veniam, beatae atque ratione aliquid! Possimus, commodi.</p>
+          
+
 
           </div>
 
