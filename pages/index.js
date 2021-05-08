@@ -35,12 +35,17 @@ export default function Home() {
           align-items: center;
           width:100%;
         }
+        .containerBaskets button {
+          margin-bottom: 51px;
+
+        }
         h3 {
           text-align: center;
           font-weight: 400;
           font-size: 35px;
           margin-bottom: 20px
         }
+        
         .containerImg {
           display: flex;
           justify-content: center;
@@ -63,13 +68,35 @@ export default function Home() {
         .howWork {
           width:1000px
         }
+        .howWork h3 {
+          margin-bottom: 16px;
+        }
+        .howWork h4{
+          color: var(--lightGreen);
+          margin-top: 0;
+          margin-bottom: 23px;
+
+
+        }
+        .howWork p {
+          margin-top : 0;
+        }
+        
         .ourProducers {
           display: flex;
           flex-direction: row;
           max-width: 1100px;
+          margin-top: 90px;
         }
         .ourProducers iframe {
           border-radius: 66px;
+          margin-left: 100px;
+          height: 343px
+        }
+        .orangeContainer {
+          width: 40%;
+          height: 618px;
+
         }
        
       
@@ -124,7 +151,9 @@ export default function Home() {
           <div className="howWork">
             <h3>Comment ça marche</h3>
             <h4>C’est simple comme bonjour</h4>
-            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed </p>
+            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+               invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos 
+               et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing  </p>
           </div>
           <svg width="1010" height="260">
             <rect width="1000" height="250" stroke="black" fill="white" />
@@ -140,7 +169,7 @@ export default function Home() {
             </div>
           </div>
           <div className="orangeContainer">
-           
+          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quod nesciunt at porro dignissimos voluptas, ipsa aut dolor natus commodi nihil placeat, temporibus laborum veniam, beatae atque ratione aliquid! Possimus, commodi.</p>
 
           </div>
 

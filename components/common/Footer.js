@@ -19,7 +19,7 @@ const Footer = () => {
           background-color: var(--white);
           padding: 20px 76px;
           border-radius: 78px;
-          margin-top: -71.5px;
+          margin-top: -78.5px;
           
         
         }
@@ -40,14 +40,14 @@ const Footer = () => {
 
         .footerMenu h3 {
           margin-top: 0;
-          margin-bottom: 16px;
+          margin-bottom: 0;
           color: var(--white);
           font-weight: 200;
           text-align:left;
           
         }
         .footerMenu li {
-          margin: 10px;
+          margin: 10px 0;
           align-self: start
         }
         .columnMenu {
@@ -60,7 +60,7 @@ const Footer = () => {
           text-align:center;
           margin: auto;
           display:block;
-          margin 48px 0 14px 0;
+          margin 10px 0 9px 0;
 
         }
       `}</style>
