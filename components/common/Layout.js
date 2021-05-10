@@ -12,6 +12,7 @@ const Layout = ({ children }) => {
     return (
        
       <>
+      
         <div className="root">
           <Meta/>
           <header>

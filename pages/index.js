@@ -9,6 +9,9 @@ export default function Home() {
   return (
     <>
       <style global jsx>{`
+      .rootIndex {
+        width: 100%;
+      }
       main {
         margin : auto;
         width:100%;
@@ -98,18 +101,23 @@ export default function Home() {
         }
         .orangeContainer {
           height: 618px;
-          width: 100%;
           background-image: url('orangeT.svg');
           background-repeat: no-repeat;
           background-size: cover;
           background-position: center;
+          width: 1545px;
+          display: flex;
+          justify-content:center;
 
+        }
+        .orangeContent {
+          width:1174px
         }
        
       
       
       `}</style>
-      <div >
+      <div className="rootIndex">
 
         <main className={styles.main}>
           <div className="containerResume">
@@ -132,20 +140,20 @@ export default function Home() {
             <div className="navBaskets">
               <ul>
                 <li>
-                  <Button backgroundColor = 'var(--yellow)' width ="auto" margin="0 15px">Nos classiques</Button>
+                  <Button backgroundColor='var(--yellow)' width="auto" margin="0 15px">Nos classiques</Button>
                 </li>
                 <li>
-                  <Button backgroundColor = 'var(--yellow)' width ="auto" margin="0 15px">Nos végés</Button>
+                  <Button backgroundColor='var(--yellow)' width="auto" margin="0 15px">Nos végés</Button>
                 </li>
                 <li>
-                  <Button backgroundColor = 'var(--yellow)' width ="auto" margin="0 15px">Nos lorem</Button> 
+                  <Button backgroundColor='var(--yellow)' width="auto" margin="0 15px">Nos lorem</Button>
                 </li>
                 <li>
-                  <Button backgroundColor = 'var(--yellow)' width ="auto" margin="0 15px">Nos lorem</Button>
+                  <Button backgroundColor='var(--yellow)' width="auto" margin="0 15px">Nos lorem</Button>
                 </li>
                 <li>
-                  <Button backgroundColor = 'var(--yellow)' width ="auto" margin="0 15px">Nos lorem</Button>
-                </li>               
+                  <Button backgroundColor='var(--yellow)' width="auto" margin="0 15px">Nos lorem</Button>
+                </li>
               </ul>
             </div>
             <div className="containerImg">
@@ -159,7 +167,7 @@ export default function Home() {
             <h3>Comment ça marche</h3>
             <h4>C’est simple comme bonjour</h4>
             <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
-               invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos 
+            invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos
                et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing  </p>
           </div>
           <svg width="1010" height="260">
@@ -172,14 +180,13 @@ export default function Home() {
               <Button>Voir tous les paniers</Button>
             </div>
             <div className="videoProducer">
-              <iframe width="560" height="315" src="https://www.youtube.com/embed/OVJEeXT78IE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>  
+              <iframe width="560" height="315" src="https://www.youtube.com/embed/OVJEeXT78IE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
           </div>
           <div className="orangeContainer">
-          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quod nesciunt at porro dignissimos voluptas, ipsa aut dolor natus commodi nihil placeat, temporibus laborum veniam, beatae atque ratione aliquid! Possimus, commodi.</p>
-          
-
-
+            <div className="orangeContent">
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum quisquam quidem quo eveniet nam omnis, perspiciatis voluptatum aperiam rem odit ipsa voluptatib</p>
+            </div>
           </div>
 
           <p className={styles.description}>
