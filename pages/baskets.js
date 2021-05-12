@@ -1,7 +1,17 @@
 
+import BasketPreferenceButton from '../components/basket/BasketPreferenceButton'
+
 const Baskets = () => {
     return (
-            <p>ICI page Baskets</p>
+            <> 
+            <span>
+                Ici page basket
+            </span>
+            <div className="basketChoice">
+                <BasketPreferenceButton image='laitOeuf.jpeg'>Laitier</BasketPreferenceButton>
+            </div>
+            </>
+        
     )
 }
 
