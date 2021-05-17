@@ -6,6 +6,8 @@ body {
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 
     display: flex;
+    background: transparent;
+    
   
   
 
@@ -18,6 +20,7 @@ body {
 
     --font1 : "Baloo 2";
     --font2: "hero-new"
+
     
 
 
@@ -32,7 +35,8 @@ body {
   align-items: center;
   height: 100%;
   width: 100%;
-  margin:auto
+  margin:auto;
+  
 }
 
 
@@ -52,6 +56,8 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  background: transparent;
+  
 }
 
 main {

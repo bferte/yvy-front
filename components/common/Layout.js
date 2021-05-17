@@ -16,6 +16,7 @@ const Layout = ({ children }) => {
         <div className="root">
           <Meta/>
           <header>
+          
             <Navbar/>
             
           </header>
