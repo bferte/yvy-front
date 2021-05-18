@@ -116,7 +116,15 @@ export default function Home() {
 
         }
         .orangeContent {
-          width:1174px
+          width:1174px;
+          display:flex;
+          flex-direction: column;
+          position:relative;
+          top:120px;
+        }
+        .listAdvantage {
+          display:flex;
+          
         }
 
         /* ======  Guarantees  ======*/
@@ -217,7 +225,21 @@ export default function Home() {
           </div>
           <div className="orangeContainer">
             <div className="orangeContent">
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum quisquam quidem quo eveniet nam omnis, perspiciatis voluptatum aperiam rem odit ipsa voluptatib</p>
+              <h3>Bon pour vous, bon pour la planète, bon pour votre porte-monnaie !</h3>
+              <div className="listAdvantage">
+                <div className="advantage">
+                  <h5>Économie de temps</h5>
+                  <p>Nous livrons sur votre lieu de travail tout ce dont vous avez besoin pour préparer de délicieux dîners maison. Moins de temps à faire les courses, plus de temps pour vous.</p>
+                </div>
+                <div className="advantage">
+                  <h5>Rapport qualité-prix</h5>
+                  <p>Nous travaillons avec des producteurs locaux de confiance pour acheter des ingrédients frais, de haute qualité et de saison !</p>
+                </div>
+                <div className="advantage">
+                  <h5>Compenser votre empreinte carbone</h5>
+                  <p>Les paniers YVY est la première entreprise local de panier à cuisiner neutre en CO2, qui soutient des projets écologiques locaux qui vous tiennent à cœur.</p>
+                </div>
+              </div>
             </div>
           </div>
           <div className="guaranteeContainer">
