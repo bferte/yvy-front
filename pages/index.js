@@ -12,24 +12,7 @@ export default function Home() {
       .rootIndex {
         width: 100%;
       }
-      .orangeBgHome1Container {
-        
-        background-image: url('home/orangeBgHome1.png');
-        min-height: 516px;
-        padding: 50px 45px;
-text-align: center;
-
-background-position: 50%;
-background-size: cover;
-background-repeat: no-repeat;
-right:-500px;
-overflow: hidden;
-
-        
-        
-        
-      }
-
+      
       main {
         margin : auto;
         width:100%;
@@ -137,7 +120,6 @@ overflow: hidden;
       `}</style>
       
       <div className="rootIndex">
-      <div className="orangeBgHome1Container"></div>
 
         <main className={styles.main}>
           <div className="containerResume">
