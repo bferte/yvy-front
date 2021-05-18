@@ -62,6 +62,7 @@ const Footer = () => {
           border-radius:35px;
         }
         .logoContainer img {
+          width:auto;
           padding: 10px 25px;
         }
         small {

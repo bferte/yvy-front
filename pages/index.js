@@ -119,14 +119,29 @@ export default function Home() {
           width:1174px;
           display:flex;
           flex-direction: column;
+          align-items:center;
           position:relative;
-          top:120px;
+          top:100px;
+          color:var(--white);
+        }
+        .orangeContent h3 {
+          margin-top: 15px;
         }
         .listAdvantage {
           display:flex;
           
         }
+        .advantage {
+          margin: 0 58px;
+        }
+        .advantage h5{
+          font-size:25px;
+          font-family:var(--font1);
+          height:40px;
+          text-align:center;
+          margin-top: 20px;         
 
+        }
         /* ======  Guarantees  ======*/
         .guaranteeContainer {
           display:flex;
@@ -228,11 +243,11 @@ export default function Home() {
               <h3>Bon pour vous, bon pour la planète, bon pour votre porte-monnaie !</h3>
               <div className="listAdvantage">
                 <div className="advantage">
-                  <h5>Économie de temps</h5>
+                  <h5>Économie <br/> de temps</h5>
                   <p>Nous livrons sur votre lieu de travail tout ce dont vous avez besoin pour préparer de délicieux dîners maison. Moins de temps à faire les courses, plus de temps pour vous.</p>
                 </div>
                 <div className="advantage">
-                  <h5>Rapport qualité-prix</h5>
+                  <h5>Rapport <br/> qualité-prix</h5>
                   <p>Nous travaillons avec des producteurs locaux de confiance pour acheter des ingrédients frais, de haute qualité et de saison !</p>
                 </div>
                 <div className="advantage">
@@ -240,6 +255,8 @@ export default function Home() {
                   <p>Les paniers YVY est la première entreprise local de panier à cuisiner neutre en CO2, qui soutient des projets écologiques locaux qui vous tiennent à cœur.</p>
                 </div>
               </div>
+              <Button margin="19px 0">Découvrir notre concept</Button>
+
             </div>
           </div>
           <div className="guaranteeContainer">

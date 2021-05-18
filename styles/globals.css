@@ -19,10 +19,12 @@ body {
 
 
     --font1 : "Baloo 2";
-    --font2: "hero-new"
+    --font2: "hero-new";
 
     
 
+    margin: auto;
+    align-items: center;
 
 
 
@@ -36,6 +38,7 @@ body {
   height: 100%;
   width: 100%;
   margin:auto;
+
   
 }
 
