@@ -3,7 +3,7 @@ const Footer = () => {
     <>
       <style jsx>{`
         footer {
-          margin-top: 120px;
+          margin-top: 46px;
           background-image: url("bgGreenFooter.svg");
           background-position: center top;
           background-size:2200px ;

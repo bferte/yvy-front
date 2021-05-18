@@ -13,6 +13,7 @@ export default function Home() {
         width: 100%;
       }
       
+
       main {
         margin : auto;
         width:100%;
@@ -22,6 +23,7 @@ export default function Home() {
         flex-direction: column;
         align-items:center
         }
+        /* ======  Resume  ======*/
         .containerResume {
           display : flex;
           align-items : center;
@@ -35,6 +37,7 @@ export default function Home() {
           width: 586px;
           margin-right: 85px
         }
+        /* ======  Baskets  ======*/
         .containerBaskets {
           display: flex;
           flex-direction: column;
@@ -52,7 +55,7 @@ export default function Home() {
           margin-bottom: 20px;
           margin-top:35px;
         }
-        
+        /* ======  Images  ======*/
         .containerImg {
           display: flex;
           justify-content: center;
@@ -64,7 +67,7 @@ export default function Home() {
         .navBaskets ul {
           justify-content: center;
         }
-
+        /* ======  How Work  ======*/
         .howWork {
           display: flex;
           flex-direction: column;
@@ -88,7 +91,7 @@ export default function Home() {
         .howWork p {
           margin-top : 0;
         }
-        
+        /* ======  Our Producers  ======*/
         .ourProducers {
           display: flex;
           flex-direction: row;
@@ -100,6 +103,7 @@ export default function Home() {
           margin-left: 100px;
           height: 343px
         }
+        /* ======  Orange Container  ======*/
         .orangeContainer {
           height: 618px;
           background-image: url('orangeT.svg');
@@ -114,6 +118,32 @@ export default function Home() {
         .orangeContent {
           width:1174px
         }
+
+        /* ======  Guarantees  ======*/
+        .guaranteeContainer {
+          display:flex;
+        }
+        .guarantee {
+          display:flex;
+          flex-direction: column;
+          align-items: center;
+          margin:52px 20px 0 20px;
+          text-align:center;
+
+        }
+        .guarantee h5 {
+          font-family: "hero-new";
+          margin : 5px 0;
+          color: var(--darkGreen)
+        }
+        .guarantee img {
+          height: 80px;
+          margin : 0 0 5px 0;
+        }
+        .guarantee p {
+          margin: 0;
+        }
+
        
       
       
@@ -190,10 +220,34 @@ export default function Home() {
               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum quisquam quidem quo eveniet nam omnis, perspiciatis voluptatum aperiam rem odit ipsa voluptatib</p>
             </div>
           </div>
-
-          <p className={styles.description}>
-            {session ? <span>Your JWT is {session.jwt}</span> : <span>Get started by click in <a href="/login">login</a>{' '}</span>}
-          </p>
+          <div className="guaranteeContainer">
+            <div className="guarantee">
+              <img src="icone-cadenas.svg" alt="un cadenas"/>
+              <h5>Paiements sécurisés</h5>
+              <p>Par PayPal, carte ou virement bancaire</p>
+            </div>
+            <div className="guarantee">
+              <img src="icone-France.svg" alt="la France"/>
+              <h5>Made in Loire-Atlantique</h5>
+              <p>Produits 100% locaux, 100% de saison</p>
+            </div>
+            <div className="guarantee">
+              <img src="icone-company.svg" alt="un immeuble"/>
+              <h5>Livraison en entreprise</h5>
+              <p>Oui oui, ne bougez pas on arrive sur votre lieu de travail</p>
+            </div>
+            <div className="guarantee">
+              <img src="icone-dialog.svg" alt="une bulle de dialogue"/>
+              <h5>Un SAV au taquet</h5>
+              <p>Un live chat de 8h30 à 18h où par email à contact@yvy.com</p>
+            </div>
+          </div>
+          {/*
+              <p className={styles.description}>
+                {session ? <span>Your JWT is {session.jwt}</span> : <span>Get started by click in <a href="/login">login</a>{' '}</span>}
+              </p>
+          */}
+         
         </main>
 
       </div>
