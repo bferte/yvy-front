@@ -4,29 +4,23 @@ const Footer = () => {
       <style jsx>{`
         footer {
           margin-top: 120px;
-          background-color: var(--lightGreen);
+          background-image: url("bgGreenFooter.svg");
+          background-position: center top;
+          background-size:2200px ;
+          background-repeat: no-repeat;
           color: black;
-          border-radius: 74px 74px 0px 0px;
           width: 100%;
           display:flex;
           flex-direction: column;
           align-items:center;
           
         }
-        .logo {
-          width: 396px;
-          height: 143px;
-          background-color: var(--white);
-          padding: 20px 76px;
-          border-radius: 78px;
-          margin-top: -78.5px;
-          
         
-        }
         .footerMenu {
           
           display: flex;
-          justify-content: center;
+          justify-content: space-between;
+          padding-top: 45px;
           padding-right:15px;
           padding-left:15px;
           font-family: var(--font1);
@@ -41,34 +35,42 @@ const Footer = () => {
         .footerMenu h3 {
           margin-top: 0;
           margin-bottom: 0;
-          color: var(--white);
-          font-weight: 200;
-          font-size: 35px;
+          color: var(--darkGreen);
+          font-family:var(--font2);
+          font-weight: 800;
+          font-size: 20px;
           text-align:left;
           
         }
         .footerMenu li {
           margin: 10px 0;
-          align-self: start
+          align-self: start;
+          font-size:17px;
         }
         .columnMenu {
           margin:35px
         }
+        .logoContainer {
+          background-color: var(--white);
+          display:flex;
+          border-radius:35px;
+        }
+        .logoContainer img {
+          padding: 10px 25px;
+        }
         small {
-          color: var(--white);
+          color: var(--darkGreen);
           font-family: var(--font2);
           font-size:16px;
           text-align:center;
           margin: auto;
           display:block;
-          margin 10px 0 9px 0;
+          margin -35px 0 9px 0;
 
         }
       `}</style>
       <footer>
-        <div className="logo">
-          <img src="logoYvy.svg" alt="" srcset="" />
-        </div>
+        
         <div className="footerMenu">
           <div className="columnMenu">
             <h3>Aide et contact</h3>
@@ -105,6 +107,10 @@ const Footer = () => {
               <li>@yvy_paniers.locaux</li>
               <li>@yvy_paniers.locaux</li>
             </ul>
+            <div className="logoContainer">
+              <img src="logoYvy.svg" alt="" srcset="" />
+            </div>
+            
           </div>
           
         </div>
