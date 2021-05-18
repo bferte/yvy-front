@@ -33,10 +33,25 @@ export default function Home() {
           color : var(--darkGreen);
         }
         .resume {
-          height: 331px;
+          height: 700px;
           width: 586px;
-          margin-right: 85px
+          margin-right: 85px;
+         
         }
+        .basketFull {
+          background-image: url('basketFull.png');
+          background-repeat: no-repeat;
+          background-size: cover;
+          background-position: center;
+          width: 50%;
+          right:-60px;
+          position:absolute;
+          display: flex;
+          justify-content:center;
+          height:100%; 
+          z-index:-1;     
+          }
+        
         /* ======  Baskets  ======*/
         .containerBaskets {
           display: flex;
@@ -97,6 +112,7 @@ export default function Home() {
           flex-direction: row;
           max-width: 1100px;
           margin-top: 90px;
+          margin-bottom:120px;
         }
         .ourProducers iframe {
           border-radius: 66px;
@@ -127,6 +143,7 @@ export default function Home() {
         .orangeContent h3 {
           margin-top: 15px;
         }
+        
         .listAdvantage {
           display:flex;
           
@@ -139,8 +156,27 @@ export default function Home() {
           font-family:var(--font1);
           height:40px;
           text-align:center;
-          margin-top: 20px;         
+          margin-top: -30px;  
+          text-align:left;       
 
+        }
+         #timeAdv::before {
+          content: url("icon-time.svg");
+          position: relative;
+          top: 29px;
+          right: 62px;
+        }
+        #priceAdv::before {
+          content: url("icon-euro.svg");
+          position: relative;
+          top: 29px;
+          right: 62px;
+        }
+        #ecoAdv::before {
+          content: url("icon-leaf.svg");
+          position: relative;
+          top: 29px;
+          right: 62px;
         }
         /* ======  Guarantees  ======*/
         .guaranteeContainer {
@@ -181,13 +217,7 @@ export default function Home() {
               <p>Des bons produits locaux pour concocter des recettes simples et délicieuses, livrés dans votre entreprise, à partir de X,XX € par repas.</p>
               <Button><a href="login">Je créé un compte</a></Button>
             </div>
-            <svg xmlns="http://www.w3.org/2000/svg" width="435" height="480" viewBox="0 0 875 970">
-              <g id="IMG" fill="#fff" stroke="#1a1a1a" stroke-width="1">
-                <rect width="875" height="970" stroke="none" />
-                <rect x="0.5" y="0.5" width="874" height="969" fill="none" />
-              </g>
-            </svg>
-
+          <div className="basketFull"></div>
           </div>
 
           <div className="containerBaskets">
@@ -224,10 +254,9 @@ export default function Home() {
             <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
             invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos
                et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing  </p>
+               <img src="howWorkPict.svg" alt="explication du fonctionnement YVY" />
           </div>
-          <svg width="1010" height="260">
-            <rect width="1000" height="250" stroke="black" fill="white" />
-          </svg>
+          
           <div className="ourProducers">
             <div className="resumeProducer">
               <h3>Nos producteurs</h3>
@@ -242,15 +271,15 @@ export default function Home() {
             <div className="orangeContent">
               <h3>Bon pour vous, bon pour la planète, bon pour votre porte-monnaie !</h3>
               <div className="listAdvantage">
-                <div className="advantage">
+                <div className="advantage" id="timeAdv">
                   <h5>Économie <br/> de temps</h5>
                   <p>Nous livrons sur votre lieu de travail tout ce dont vous avez besoin pour préparer de délicieux dîners maison. Moins de temps à faire les courses, plus de temps pour vous.</p>
                 </div>
-                <div className="advantage">
+                <div className="advantage" id="priceAdv">
                   <h5>Rapport <br/> qualité-prix</h5>
                   <p>Nous travaillons avec des producteurs locaux de confiance pour acheter des ingrédients frais, de haute qualité et de saison !</p>
                 </div>
-                <div className="advantage">
+                <div className="advantage" id="ecoAdv">
                   <h5>Compenser votre empreinte carbone</h5>
                   <p>Les paniers YVY est la première entreprise local de panier à cuisiner neutre en CO2, qui soutient des projets écologiques locaux qui vous tiennent à cœur.</p>
                 </div>
