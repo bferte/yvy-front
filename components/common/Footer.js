@@ -48,7 +48,13 @@ const Footer = () => {
           font-size:17px;
         }
         .columnMenu {
-          margin:35px
+          margin:35px;
+        }
+        .columnMenu li {
+          display:flex;        
+        }
+        .columnMenu li img {
+          margin-right: 8px;
         }
         .logoContainer {
           background-color: var(--white);
@@ -103,9 +109,9 @@ const Footer = () => {
           <div className="columnMenu">
             <h3>Suivez-nous !</h3>
             <ul>
-              <li>@yvy_paniers.locaux</li>
-              <li>@yvy_paniers.locaux</li>
-              <li>@yvy_paniers.locaux</li>
+              <li><img src="FbLogo.svg" alt="logo facebook"/>@yvy_paniers.locaux</li>
+              <li><img src="instaLogo.svg" alt="logo instagram"/>@yvy_paniers.locaux</li>
+              <li><img src="linkedinLogo.svg" alt="logo linkedin"/>@yvy_paniers.locaux</li>
             </ul>
             <div className="logoContainer">
               <img src="logoYvy.svg" alt="" srcset="" />
