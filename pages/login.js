@@ -24,7 +24,9 @@ export default function Login() {
             h3 {
                 font-size: 44px;
                 font-family: var(--font1);
-                color: var(--darkGreen)
+                color: var(--darkGreen);
+                margin-bottom: 0;
+                
             }
             .inputContainer {
                 display: flex;
