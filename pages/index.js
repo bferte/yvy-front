@@ -215,7 +215,7 @@ export default function Home() {
             <div className="resume">
               <h2>Le plaisir de la bonne cuisine sans la corvée des courses !</h2>
               <p>Des bons produits locaux pour concocter des recettes simples et délicieuses, livrés dans votre entreprise, à partir de X,XX € par repas.</p>
-              <Button><a href="login">Je créé un compte</a></Button>
+              <a href="login"><Button>Je créé un compte</Button></a>
             </div>
           <div className="basketFull"></div>
           </div>

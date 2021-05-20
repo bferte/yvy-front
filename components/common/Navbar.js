@@ -1,6 +1,6 @@
 import Link from 'next/link'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 import { useSession, signOut } from 'next-auth/client'
 import LinkMenu from './LinkMenu'
@@ -14,7 +14,6 @@ const Navbar = () => {
     const [activeKey, setActiveKey] = useState('')
 
 
-    
 
 
 
@@ -27,10 +26,20 @@ const Navbar = () => {
                 display : flex;
                 width:100%;
                 align-items: center;
-                justify-content: center
+                justify-content: center;
+                position : fixed;
+                left:0;
+                right:0;
+                top:0;
+                transition: top 0.3s;
+                transition-delay: 0.2s;
+                z-index:10;
                 
               
             }
+        
+
+            
             
             .logoNavbar {
                 height : 84px;
@@ -88,7 +97,7 @@ const Navbar = () => {
                                     </a>
                                 </div>
                                 :
-                                <Button width='126px'>Connexion</Button>
+                                <a href="/login"><Button width='126px'>Connexion</Button></a>
                             }
                         </div>
 
