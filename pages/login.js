@@ -14,15 +14,15 @@ export default function Login() {
         <>
             <style global jsx>{`
             .loginContainer {
-                width: 1170px;
-                height: 1573px;
+                width: 700px;
+                height: 900px;
                 box-shadow: 0px 3px 20px #00000029;
                 border-radius: 70px;
                 padding: 71px 84px;
             }
 
             h3 {
-                font-size: 44px;
+                font-size: 34px;
                 font-family: var(--font1);
                 color: var(--darkGreen);
                 margin-bottom: 0;
@@ -42,7 +42,7 @@ export default function Login() {
             }
             label {
                 font-family: var(--font2);
-                font-size: 26px;
+                font-size: 20px;
                 color: var(--darkGreen);
                 text-align:left;
                 display:block;
