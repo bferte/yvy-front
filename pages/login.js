@@ -24,7 +24,7 @@ export default function Login() {
             password: password
         }
 
-        const register = await fetch(`${env.NEXT_PUBLIC_API_URL}/auth/local/register`, {
+        const register = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/auth/local/register`, {
             method: "POST",
             headers: {
                 'Accept': 'application/json',
@@ -130,6 +130,7 @@ export default function Login() {
                     <div className="inputLogin">
                         <label htmlFor="email">E-mail</label>
                         <input name='email' type='email' onChange={ e => setEmail(e.target.value) } value={email} placeholder="Email" />
+                        {console.log(email)}
                     </div>
                     <div className="inputLogin">
                         <label htmlFor="password">Password</label>
