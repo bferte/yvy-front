@@ -2,6 +2,8 @@ import { signIn } from 'next-auth/client'
 import { useRouter } from 'next/router'
 import { useState } from 'react'
 
+import Button from '../components/common/Button'
+
 export default function Login() {
     const [credentials, setCredentials] = useState({ username: '', password: '' })
     const [loginError, setError] = useState('')
@@ -9,6 +11,35 @@ export default function Login() {
     function handleUpdate(update) {
         setCredentials({ ...credentials, ...update })
     }
+
+    
+    const [username, setUsername] = useState('')
+    const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('')
+
+    async function handleRegister() {
+        const registerInfo = {
+            username: username,
+            email: email,
+            password: password
+        }
+
+        const register = await fetch(`${env.NEXT_PUBLIC_API_URL}/auth/local/register`, {
+            method: "POST",
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(registerInfo)
+        })
+
+        const registerResponse = await register.json();
+        console.log(registerResponse)
+    }
+
+    
+
+
     return (
 
         <>
@@ -97,29 +128,15 @@ export default function Login() {
                 <div className="inputContainer">
                     <h3>Inscription</h3>
                     <div className="inputLogin">
-                        <label htmlFor="username">E-mail</label>
-                        <input name='username' type='email' onChange={(e) => handleUpdate({ username: e.target.value })} />
+                        <label htmlFor="email">E-mail</label>
+                        <input name='email' type='email' onChange={ e => setEmail(e.target.value) } value={email} placeholder="Email" />
                     </div>
                     <div className="inputLogin">
                         <label htmlFor="password">Password</label>
-                        <input name='password' type='password' onChange={(e) => handleUpdate({ password: e.target.value })} />
+                        <input name='password' type='password' onChange={ e => setPassword(e.target.value) } value={password} placeholder="Password" />
                     </div>
-                    <span>{loginError}</span>
-                    <button
-                        onClick={async () => {
-                            const response = await signIn('credentials', {
-                                redirect: false,
-                                ...credentials
-                            })
-                            if (response.error) {
-                                setError(response.error)
-                            } else if (response.ok) {
-                                router.push("/")
-                            }
-                        }}
-                    >
-                        Sign in
-                </button>
+                    <button onClick={() => handleRegister() }>Je m'inscris</button>
+                    
                 </div>
             </div>
 

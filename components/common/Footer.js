@@ -115,7 +115,7 @@ const Footer = () => {
               <li><img src="linkedinLogo.svg" alt="logo linkedin"/>@yvy_paniers.locaux</li>
             </ul>
             <div className="logoContainer">
-              <img src="logoYvy.svg" alt="" srcset="" />
+              <img src="logoYvy.svg" alt="logo Yvy"  />
             </div>
             
           </div>
