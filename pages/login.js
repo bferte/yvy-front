@@ -19,7 +19,7 @@ export default function Login() {
 
     async function handleRegister() {
         const registerInfo = {
-            username: username,
+            username: email,
             email: email,
             password: password
         }
@@ -137,7 +137,7 @@ export default function Login() {
                         <input name='password' type='password' onChange={ e => setPassword(e.target.value) } value={password} placeholder="Password" />
                     </div>
                     <button onClick={() => handleRegister() }>Je m'inscris</button>
-                    
+                    {console.log(process.env.NEXT_PUBLIC_API_URL)}
                 </div>
             </div>
 
