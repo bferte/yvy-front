@@ -137,7 +137,6 @@ export default function Login() {
                         <input name='password' type='password' onChange={ e => setPassword(e.target.value) } value={password} placeholder="Password" />
                     </div>
                     <button onClick={() => handleRegister() }>Je m'inscris</button>
-                    {console.log(process.env.NEXT_PUBLIC_API_URL)}
                 </div>
             </div>
 
