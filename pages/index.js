@@ -17,7 +17,6 @@ export default function Home() {
       main {
         margin : auto;
         width:100%;
-        max-width : 1545px;
         display:flex;
         justify-content: center;
         flex-direction: column;
@@ -44,7 +43,7 @@ export default function Home() {
           background-size: cover;
           background-position: center;
           width: 50%;
-          right:-60px;
+          right: 0;
           position:absolute;
           display: flex;
           justify-content:center;
@@ -126,13 +125,12 @@ export default function Home() {
           background-repeat: no-repeat;
           background-size: cover;
           background-position: center;
-          width: 1545px;
           display: flex;
           justify-content:center;
+          
 
         }
         .orangeContent {
-          width:1174px;
           display:flex;
           flex-direction: column;
           align-items:center;

@@ -16,13 +16,20 @@ export default function Login() {
     const [username, setUsername] = useState('')
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
+    const [codeCompany, setCodeCompany] =useState('')
+    const [firstName, setFirstName] = useState('')
+    const [lastName, setLastName] = useState('')
 
     async function handleRegister() {
         const registerInfo = {
             username: email,
             email: email,
-            password: password
+            password: password,
+            codeCompany: codeCompany,
+            firstName: firstName,
+            lastName: lastName
         }
+        console.log(registerInfo)
 
         const register = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/auth/local/register`, {
             method: "POST",
@@ -46,7 +53,7 @@ export default function Login() {
             <style global jsx>{`
             .loginContainer {
                 width: 700px;
-                height: 900px;
+                height: 1100px;
                 box-shadow: 0px 3px 20px #00000029;
                 border-radius: 70px;
                 padding: 71px 84px;
@@ -70,6 +77,24 @@ export default function Login() {
                 width: 100%;
                 margin: 38px 0 0 0;
 
+            }
+            .inputLoginCodeCompany {
+                width: 100%;
+                margin: 38px 0 0 0;
+                display: flex;
+                align-items: center;
+            }
+            .inputLoginCodeCompany input {
+                width: 30%;
+
+            }
+            .nameInput {
+                display: flex;
+                justify-content: space-between;
+                width: 100%;
+            }
+            .nameInput .inputLogin{
+                width: 40%;
             }
             label {
                 font-family: var(--font2);
@@ -127,6 +152,13 @@ export default function Login() {
                 </div>
                 <div className="inputContainer">
                     <h3>Inscription</h3>
+                    <div className="inputLoginCodeCompany">
+                        <div>
+                           <label htmlFor="email">Code entreprise</label>
+                        <p>Code de 4 chiffres donné par votre entreprise, il faut que celle-ci soit partenaire</p> 
+                        </div>          
+                        <input name='codeCompany' type='number' onChange={ e => setCodeCompany(e.target.value) } value={codeCompany}  />
+                    </div>
                     <div className="inputLogin">
                         <label htmlFor="email">E-mail</label>
                         <input name='email' type='email' onChange={ e => setEmail(e.target.value) } value={email} placeholder="Email" />
@@ -135,6 +167,16 @@ export default function Login() {
                     <div className="inputLogin">
                         <label htmlFor="password">Password</label>
                         <input name='password' type='password' onChange={ e => setPassword(e.target.value) } value={password} placeholder="Password" />
+                    </div>
+                    <div className="nameInput">
+                        <div className="inputLogin">
+                            <label htmlFor="firstName">Prénom</label>
+                            <input name='firstName' type='text' onChange={ e => setFirstName(e.target.value) } value={firstName} placeholder="Prénom" />
+                        </div>
+                        <div className="inputLogin">
+                        <label htmlFor="lastName">Nom</label>
+                        <input name='lastName' type='text' onChange={ e => setLastName(e.target.value) } value={lastName} placeholder="Nom" />
+                    </div>
                     </div>
                     <button onClick={() => handleRegister() }>Je m'inscris</button>
                 </div>

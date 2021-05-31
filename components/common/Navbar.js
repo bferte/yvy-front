@@ -13,9 +13,37 @@ const Navbar = () => {
     const [session, loading] = useSession()
     const [activeKey, setActiveKey] = useState('')
 
-    
+    /* Visibility navbar */
+
+    /*
+    const [prevScrollpos, setPrevScrollpos] = useState('');
+    const [visible, setVisible] = useState(true); */
+/*
+    handleScroll = () => {
+        setPrevScrollpos();
+        const currentScrollPos = window.pageYOffset;
+        const visible = prevScrollpos > currentScrollPos;
 
 
+    }
+
+
+    useEffect(() => {
+        setPrevScrollpos(window.pageYOffset);
+        console.log(prevScrollpos)
+
+        window.addEventListener("scroll", this.handleScroll);
+
+
+        return function cleanup()
+        {
+            window.removeEventListener("scroll", this.handleScroll);
+
+        }
+        
+
+    }, [])
+*/
     return (
         <>
             <style global jsx>{`
@@ -48,7 +76,13 @@ const Navbar = () => {
                 font-family : hero-new;
                 font-size : 16px;
                 font-weight: 600;
+
+                transition: top 0.6s;
+
             }
+            .navbar--hidden {
+                top: -50px;
+              }
             ul {
                 display : flex;
                 justify-content: space-around;
