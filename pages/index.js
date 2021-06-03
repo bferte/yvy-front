@@ -2,6 +2,7 @@ import { useSession, signOut } from 'next-auth/client'
 import styles from '../styles/Home.module.css'
 
 import Button from '../components/common/Button'
+import BasketCard from '../components/common/basketCard'
 
 
 export default function Home() {
@@ -62,12 +63,16 @@ export default function Home() {
           margin-bottom: 51px;
 
         }
+        
         h3 {
           text-align: center;
           font-weight: 400;
           font-size: 35px;
           margin-bottom: 20px;
           margin-top:35px;
+        }
+        .navBaskets {
+          display:flex;
         }
         /* ======  Images  ======*/
         .containerImg {
@@ -78,9 +83,7 @@ export default function Home() {
           width: 28%;
           margin: 38.5px
         }
-        .navBaskets ul {
-          justify-content: center;
-        }
+        
         /* ======  How Work  ======*/
         .howWork {
           display: flex;
@@ -219,34 +222,17 @@ export default function Home() {
           </div>
 
           <div className="containerBaskets">
-            <h3>Nos paniers du moment</h3>
+            <h3>Nos paniers</h3>
             <div className="navBaskets">
-              <ul>
-                <li>
-                  <Button backgroundColor='var(--yellow)' width="auto" margin="0 15px">Nos classiques</Button>
-                </li>
-                <li>
-                  <Button backgroundColor='var(--yellow)' width="auto" margin="0 15px">Nos végés</Button>
-                </li>
-                <li>
-                  <Button backgroundColor='var(--yellow)' width="auto" margin="0 15px">Nos lorem</Button>
-                </li>
-                <li>
-                  <Button backgroundColor='var(--yellow)' width="auto" margin="0 15px">Nos lorem</Button>
-                </li>
-                <li>
-                  <Button backgroundColor='var(--yellow)' width="auto" margin="0 15px">Nos lorem</Button>
-                </li>
-              </ul>
+              <BasketCard img="basket/panier-classique.png" price="12,50" description="Fruits et légumes de saison pour la semaine">Le classique</BasketCard>
+              <BasketCard img="basket/panier-laitier.png" price="20" description="Fruits et légumes de saison avec du lait, des œufs et du fromage">Le laitier</BasketCard>
+              <BasketCard img="basket/panier-complet.png" price="26" description="Le panier classique et laitier réunis avec de la viande">Le complet</BasketCard>
+              <BasketCard img="basket/panier-repas.png" price="16" description="Panier pour composer des recettes de saison">Le spéciale recette</BasketCard>
             </div>
-            <div className="containerImg">
-              <img src="daria.png" alt="" />
-              <img src="julie.png" alt="" />
-              <img src="ella.png" alt="" />
-            </div>
+            
             <Button>Voir tous les paniers</Button>
           </div>
-          <div className="howWork">
+          <div className="howWork" id="howWork">
             <h3>Comment ça marche</h3>
             <h4>C’est simple comme bonjour</h4>
             <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor

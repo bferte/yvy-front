@@ -109,7 +109,7 @@ const Navbar = () => {
                 <img className="logoNavbar" src="logoYvy.svg" alt="Logo YVY" />
                 <ul>
                     <li><LinkMenu activeKey={activeKey} href="/" name='home' onClick={ () => setActiveKey('home')}>Accueil</LinkMenu></li>
-                    <li><LinkMenu activeKey={activeKey} href="/concept" name='concept' onClick={ () => setActiveKey('concept')}>Notre concept</LinkMenu></li>
+                    <li><LinkMenu activeKey={activeKey} href="/#howWork" name='concept' onClick={ () => setActiveKey('concept')}>Notre concept</LinkMenu></li>
                     <li><LinkMenu activeKey={activeKey} href="/espacePro" name='espacePro' onClick={ () => setActiveKey('baskets')}>Espace pro</LinkMenu></li>
                     <li><LinkMenu activeKey={activeKey} href="/producers" name='producers' onClick={ () => setActiveKey('producers')}>Nos producteurs</LinkMenu></li>
                     <li><LinkMenu activeKey={activeKey} href="/blog" name='blog' onClick={ () => setActiveKey('blog')}>Notre blog</LinkMenu></li>
