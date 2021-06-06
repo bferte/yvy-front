@@ -3,17 +3,31 @@ import { useEffect } from 'react'
 import { useRouter } from 'next/router'
 import { useSession } from 'next-auth/client'
 import { Provider } from 'next-auth/client'
+import { useState } from 'react'
 
 import Layout from '../components/common/Layout'
 
+import AppContext from './AppContext'
+
 function MyApp({ Component, pageProps }) {
+
+  const [basketSize, setBasketSize] = useState('')
+
+  const contextValue = {
+    basketSize: basketSize,
+    toggleSize : () => {},
+  }
+
   return (
-    <Provider session={pageProps.session}>
+    <AppContext.Provider>
+      <Provider session={pageProps.session}>
         {Component.auth
           ? <Auth><Layout><Component {...pageProps} /></Layout></Auth>
           : <Layout><Component {...pageProps} /></Layout>
         }
-    </Provider>
+      </Provider>
+    </AppContext.Provider>
+
   )
 }
 

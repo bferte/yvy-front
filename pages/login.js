@@ -20,6 +20,9 @@ export default function Login() {
     const [firstName, setFirstName] = useState('')
     const [lastName, setLastName] = useState('')
 
+    const [codeError, setCodeError] = useState('')
+
+
     async function handleRegister() {
         const registerInfo = {
             username: email,
@@ -44,6 +47,18 @@ export default function Login() {
         console.log(registerResponse)
     }
 
+    const setAndCheckCompany = e => {
+        if(e.value.length > 4 || e.value.length < 4) {
+            setCodeError("Le code doit contenir 4 chiffres")
+            setCodeCompany(e.value);
+
+        } else {
+            setCodeError('')
+            setCodeCompany(e.value)
+
+        }
+    }
+
     
 
 
@@ -53,7 +68,7 @@ export default function Login() {
             <style global jsx>{`
             .loginContainer {
                 width: 700px;
-                height: 1100px;
+                height: 1170px;
                 box-shadow: 0px 3px 20px #00000029;
                 border-radius: 70px;
                 padding: 71px 84px;
@@ -134,21 +149,21 @@ export default function Login() {
                         <input name='password' type='password' onChange={(e) => handleUpdate({ password: e.target.value })} />
                     </div>
                     <span>{loginError}</span>
-                    <button
-                        onClick={async () => {
-                            const response = await signIn('credentials', {
-                                redirect: false,
-                                ...credentials
-                            })
-                            if (response.error) {
-                                setError(response.error)
-                            } else if (response.ok) {
-                                router.push("/")
-                            }
-                        }}
-                    >
-                        Sign in
-                </button>
+                    
+                <Button
+                    margin = "30px"
+                    clickEvent={async () => {
+                        const response = await signIn('credentials', {
+                            redirect: false,
+                            ...credentials
+                        })
+                        if (response.error) {
+                            setError(response.error)
+                        } else if (response.ok) {
+                            router.push("/")
+                        }
+                    }}
+                >Je me connecte</Button>
                 </div>
                 <div className="inputContainer">
                     <h3>Inscription</h3>
@@ -156,9 +171,14 @@ export default function Login() {
                         <div>
                            <label htmlFor="email">Code entreprise</label>
                         <p>Code de 4 chiffres donné par votre entreprise, il faut que celle-ci soit partenaire</p> 
-                        </div>          
-                        <input name='codeCompany' type='number' onChange={ e => setCodeCompany(e.target.value) } value={codeCompany}  />
+                        </div>   
+                        <div>
+                            
+                        </div>       
+                        <input name='codeCompany' type='number' onChange={ e => setAndCheckCompany(e.target) } value={codeCompany}  />
+                        
                     </div>
+                    <span style={{color:'red',fontSize:"12px"}}>{codeError}</span>
                     <div className="inputLogin">
                         <label htmlFor="email">E-mail</label>
                         <input name='email' type='email' onChange={ e => setEmail(e.target.value) } value={email} placeholder="Email" />
@@ -178,7 +198,11 @@ export default function Login() {
                         <input name='lastName' type='text' onChange={ e => setLastName(e.target.value) } value={lastName} placeholder="Nom" />
                     </div>
                     </div>
-                    <button onClick={() => handleRegister() }>Je m'inscris</button>
+                    
+                    <Button
+                    margin = "30px"
+                    clickEvent={() => handleRegister() }
+                >Je m'inscris</Button>
                 </div>
             </div>
 

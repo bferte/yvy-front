@@ -20,7 +20,7 @@ const Button = ({children,...props}) => {
 
             `}</style>
 
-            <button>{children}</button>
+            <button onClick={props.clickEvent}>{children}</button>
         </>
         
     )

@@ -1,17 +1,23 @@
 
 import BasketPreferenceButton from '../components/basket/BasketPreferenceButton'
+import SizeStep1 from '../components/basket/sizeStep1'
 
 const Baskets = () => {
     return (
-            <> 
-            <span>
-                Ici page basket
-            </span>
+        <>
+            <style jsx>
+                {`
+                .basketChoice {
+                    width:100%;
+                }
+                
+                `}
+            </style>
             <div className="basketChoice">
-                <BasketPreferenceButton image='laitOeuf.jpeg'>Laitier</BasketPreferenceButton>
+                <SizeStep1></SizeStep1>
             </div>
-            </>
-        
+        </>
+
     )
 }
 

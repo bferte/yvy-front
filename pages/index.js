@@ -235,16 +235,15 @@ export default function Home() {
           <div className="howWork" id="howWork">
             <h3>Comment ça marche</h3>
             <h4>C’est simple comme bonjour</h4>
-            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
-            invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos
-               et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing  </p>
+            <p>Par abonnement ou à l’unité, choisissez la formule qui vous plaît ! Des bons petits paniers de produits locaux livré au bureau. Plus besoin de courir faire ses courses, elles arrivent à vous. Nous choisissons pour vous des produits de haute qualité à nos producteurs partenaires. Commandez votre panier YVY en quelques clics, il sera livré à l’avance ou pour le jour J.</p>
                <img src="howWorkPict.svg" alt="explication du fonctionnement YVY" />
           </div>
           
           <div className="ourProducers">
             <div className="resumeProducer">
               <h3>Nos producteurs</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim ducimus dicta distinctio quod, tempora neque atque deleniti deserunt quibusdam totam officiis sint. Illo ipsa rem rerum, mollitia fugiat vero sed.</p>
+              <p>100% local ! Et oui, nous travaillons avec des producteurs de Loire Atlantique. Chaque produit parcours en moyenne 60km avant d’arriver dans votre assiette.
+              Des prix justes ! Parce que sans eux nous ne mangerions pas aussi bien, chaque producteur fixe librement son prix. Nous choisissons les meilleurs petits producteurs de la région, pour vous garantir une qualité irréprochable.</p>
               <Button>Voir tous les paniers</Button>
             </div>
             <div className="videoProducer">
