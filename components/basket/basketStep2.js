@@ -44,10 +44,38 @@ const BasketStep2 = (...props) => {
             .navBaskets {
                 display: flex;
             }
-            
+            @-webkit-keyframes fade-in-right {
+                0% {
+                  -webkit-transform: translateX(50px);
+                          transform: translateX(50px);
+                  opacity: 0;
+                }
+                100% {
+                  -webkit-transform: translateX(0);
+                          transform: translateX(0);
+                  opacity: 1;
+                }
+              }
+              @keyframes fade-in-right {
+                0% {
+                  -webkit-transform: translateX(50px);
+                          transform: translateX(50px);
+                  opacity: 0;
+                }
+                100% {
+                  -webkit-transform: translateX(0);
+                          transform: translateX(0);
+                  opacity: 1;
+                }
+              }
+
+              .fade-in-right {
+                -webkit-animation: fade-in-right 0.8s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+                        animation: fade-in-right 0.8s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+            }
 
             `}</style>
-            <div className="containerStep2">
+            <div className="containerStep2 fade-in-right">
                 <h2>Personnalisez votre abonnement</h2>
                 <div className="customStep2">
                     <h3>2. Choisissez votre préférence de panier</h3>
