@@ -1,15 +1,15 @@
 import BasketCard from '../common/basketCard'
 
 
-const BasketStep2 = () => {
+const BasketStep2 = (...props) => {
 
 
     return (
         <>
             <style jsx>{`
-            .containerStep1 {
+            .containerStep2 {
                 width:100%;
-                display:flex;
+                display: ${props[0].display};
                 justify-content: start;
                 flex-direction: column;
             }
@@ -47,9 +47,9 @@ const BasketStep2 = () => {
             
 
             `}</style>
-            <div className="containerStep1">
+            <div className="containerStep2">
                 <h2>Personnalisez votre abonnement</h2>
-                <div className="customStep1">
+                <div className="customStep2">
                     <h3>2. Choisissez votre préférence de panier</h3>
 
                     <div className="navBaskets">
