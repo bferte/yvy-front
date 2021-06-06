@@ -1,9 +1,7 @@
-import Button from '../common/Button'
-
-const SizeStep1 = (...props) => {
+import BasketCard from '../common/basketCard'
 
 
-
+const BasketStep2 = () => {
 
 
     return (
@@ -11,7 +9,7 @@ const SizeStep1 = (...props) => {
             <style jsx>{`
             .containerStep1 {
                 width:100%;
-                display: ${props[0].display};
+                display:flex;
                 justify-content: start;
                 flex-direction: column;
             }
@@ -43,23 +41,24 @@ const SizeStep1 = (...props) => {
                 border:none;
                 margin-bottom:40px;
             }
+            .navBaskets {
+                display: flex;
+            }
             
 
             `}</style>
             <div className="containerStep1">
                 <h2>Personnalisez votre abonnement</h2>
-                {console.log(props[0])}
                 <div className="customStep1">
-                    <h3>1. Adaptez la taille de votre panier</h3>
-                    <span>Nombre de personnes dans votre foyer :</span>
-                    <div className="buttonNumbersContainer">
-                        <button className="buttonNumbers">1</button>
-                        <button className="buttonNumbers">2</button>
-                        <button className="buttonNumbers">3</button>
-                        <button className="buttonNumbers">4</button>
-                        <button className="buttonNumbers">5</button>
+                    <h3>2. Choisissez votre préférence de panier</h3>
+
+                    <div className="navBaskets">
+                        <BasketCard img="basket/panier-classique.png" price="12,50" description="Fruits et légumes de saison pour la semaine">Le classique</BasketCard>
+                        <BasketCard img="basket/panier-laitier.png" price="20" description="Fruits et légumes de saison avec du lait, des œufs et du fromage">Le laitier</BasketCard>
+                        <BasketCard img="basket/panier-complet.png" price="26" description="Le panier classique et laitier réunis avec de la viande">Le complet</BasketCard>
+                        <BasketCard img="basket/panier-repas.png" price="16" description="Panier pour composer des recettes de saison">Le spéciale recette</BasketCard>
                     </div>
-                    
+
                 </div>
 
             </div>
@@ -70,4 +69,4 @@ const SizeStep1 = (...props) => {
     )
 }
 
-export default SizeStep1
+export default BasketStep2

@@ -14,7 +14,8 @@ const Button = ({children,...props}) => {
                 font-family: "hero-new";
                 color: ${props.color ? props.color : 'white' };
                 background: ${props.backgroundColor ? props.backgroundColor : 'var(--lightGreen)'};
-                border: none;
+                border: ${props.border ? props.border: 'none'};
+                font-weight: bold;
                 
             }
 
