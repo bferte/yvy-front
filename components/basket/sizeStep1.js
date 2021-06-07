@@ -1,5 +1,7 @@
 import Button from '../common/Button'
 
+import AppContext from '../../pages/AppContext'
+
 const SizeStep1 = (...props) => {
 
 
@@ -79,7 +81,15 @@ const SizeStep1 = (...props) => {
             `}</style>
             <div className="containerStep1 fade-in-right">
                 <h2>Personnalisez votre abonnement</h2>
-                {console.log(props[0])}
+                <AppContext.Consumer>
+                {(data) => {
+                    return (
+                    <h1>
+                        The "value" prop passed to "Provider" was {data}
+                    </h1>
+                    )
+                }}
+                </AppContext.Consumer>
                 <div className="customStep1">
                     <h3>1. Adaptez la taille de votre panier</h3>
                     <span>Nombre de personnes dans votre foyer :</span>

@@ -13,6 +13,8 @@ const Navbar = () => {
     const [session, loading] = useSession()
     const [activeKey, setActiveKey] = useState('')
 
+    const [hidde, setHidde] = useState(false)
+
     /* Visibility navbar */
 
     /*
@@ -26,7 +28,6 @@ const Navbar = () => {
 
 
     }
-
 
     useEffect(() => {
         setPrevScrollpos(window.pageYOffset);
@@ -44,6 +45,22 @@ const Navbar = () => {
 
     }, [])
 */
+
+    useEffect(() => {
+        window.addEventListener('scroll', () => {
+            console.log(window.pageYOffset)
+            if (window.pageYOffset > 10) {
+                setHidde(true)
+            }
+            
+            //header.classList.add("hidden");
+  
+
+
+        })
+        
+    })
+
     return (
         <>
             <style global jsx>{`
@@ -63,7 +80,9 @@ const Navbar = () => {
                 
               
             }
-        
+            .hidden {
+                display: none;
+            }
 
             
             
@@ -81,7 +100,7 @@ const Navbar = () => {
 
             }
             .navbar--hidden {
-                top: -50px;
+                top: -100px;
               }
             ul {
                 display : flex;
@@ -105,7 +124,7 @@ const Navbar = () => {
            
 
             `}</style>
-            <nav className="navbar">
+            <nav className={`navbar${hidde ? " navbar--hidden" : ""}`}>
                 <img className="logoNavbar" src="logoYvy.svg" alt="Logo YVY" />
                 <ul>
                     <li><LinkMenu activeKey={activeKey} href="/" name='home' onClick={ () => setActiveKey('home')}>Accueil</LinkMenu></li>

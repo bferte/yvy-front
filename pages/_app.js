@@ -13,20 +13,18 @@ function MyApp({ Component, pageProps }) {
 
   const [basketSize, setBasketSize] = useState('')
 
-  const contextValue = {
-    basketSize: basketSize,
-    toggleSize : () => {},
-  }
+  //const [locale, setLocale] = React.useState('en')
+
 
   return (
-    //<AppContext.Provider>
+    <AppContext.Provider value={42}>
       <Provider session={pageProps.session}>
         {Component.auth
           ? <Auth><Layout><Component {...pageProps} /></Layout></Auth>
           : <Layout><Component {...pageProps} /></Layout>
         }
       </Provider>
-    //</AppContext.Provider>
+    </AppContext.Provider>
 
   )
 }

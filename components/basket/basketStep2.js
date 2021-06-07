@@ -44,6 +44,32 @@ const BasketStep2 = (props) => {
             .navBaskets {
                 display: flex;
             }
+            .basketResumeContainer {
+                display: flex;
+                flex-direction: column;
+            }
+            .basketResume {
+                display: flex;
+                margin: 29px 0;
+            }
+            .basketPic img {
+                height: 75px;
+                margin-right:37px;
+            }
+            .basketResume p {
+                font-size: 16px;
+                margin: 0;
+            }
+            .basketFootResume {
+                margin-top: 67px;
+            }
+            #lastPResume {
+                font-size:20px;
+                font-weight:bold;
+                color: var(--darkGreen);
+                text-align: center;
+                margin-top:48px;
+            }
             @-webkit-keyframes fade-in-right {
                 0% {
                   -webkit-transform: translateX(50px);
@@ -89,15 +115,67 @@ const BasketStep2 = (props) => {
                     </div>
                     <div className="basketsResumeContainer">
                         <div className="basketResume">
-                            <div className="basketPic"></div>
+                            <div className="basketPic">
+                                <img src="basket/panier-classique.png" alt="logo panier classique" />
+                            </div>
                             <div className="resume">
-                                <span>Le classique</span>
+                                <span style={{color: "var(--lightGreen)"}}>Le classique</span>
                                 <p>Pour 1 personne : 2,5kg de fruits et légumes de saison</p>
                                 <p>Pour 2 personnes : 4kg de fruits et légumes de saison</p>
                                 <p>Pour 4 personnes : 6,5kg de fruits et légumes de saison</p>
                             </div>
+                            
+                        </div>
+                        <div className="basketResume">
+                            <div className="basketPic">
+                                <img src="basket/panier-laitier.png" alt="logo panier classique" />
+                            </div>
+                            <div className="resume">
+                                <span style={{color: "var(--yellow)"}}>Le laitier</span>
+                                <p>Pour 1 personne : 2,5kg de fruits et légumes de saison + 6 œufs + 1 litre de lait + 250g de fromage</p>
+                                <p>Pour 2 personnes : 4kg de fruits et légumes de saison + 8 œufs + 2 litres de lait + 2 pièces de 250g de fromage</p>
+                                <p>Pour 4 personnes : 6,5kg de fruits et légumes de saison + 12 œufs + 5 litres de lait + 3 pièces de 250g de fromage</p>
+                            </div>
+                            
+                        </div>
+                        <div className="basketResume">
+                            <div className="basketPic">
+                                <img src="basket/panier-complet.png" alt="logo panier classique" />
+                            </div>
+                            <div className="resume">
+                                <span style={{color: "#ad2323"}}>Le complet</span>
+                                <p>Pour 1 personne : 2,5kg de fruits et légumes de saison + 6 œufs + 1 litre de lait + 250g de fromage + 800g de viande, volaille ou poisson</p>
+                                <p>Pour 2 personnes : 4kg de fruits et légumes de saison + 8 œufs + 2 litres de lait + 2 pièces de 250g de fromage + 1,5kg de viande, volaille ou poisson</p>
+                                <p>Pour 4 personnes : 6,5kg de fruits et légumes de saison + 12 œufs + 5 litres de lait + 3 pièces de 250g de fromage + 4kg de viande, volaille ou poisson</p>
+                            </div>
+                            
+                        </div>
+                        <div className="basketResume">
+                            <div className="basketPic">
+                                <img src="basket/panier-repas.png" alt="logo panier classique" />
+                            </div>
+                            <div className="resume">
+                                <span style={{color: "#ED8843"}}>Le spécial recette</span>
+                                <p>Pour 1 personne : 4 paniers recettes de saison pour 1 personnes</p>
+                                <p>Pour 2 personnes : 4 paniers recettes de saison pour 2 personnes</p>
+                                <p>Pour 4 personnes : 4 paniers recettes de saison pour 4 personnes</p>
+                            </div>
+                            
                         </div>
                     </div>
+                    <div className="basketFootResume">
+                        <p>Retrouvez les meilleurs produits locaux dans nos paniers made in Loire atlantique ! Chaque semaine vous aurez le choix parmi 4 paniers différents aux aliments de saison. Les paniers seront adaptables selon vos goûts.
+                    Ici choisissez votre préférence, vous pourrez toujours changer par la suite. Pas de panique, au moment de la sélection des paniers vous retrouverez tous nos paniers locaux.
+                    </p>
+
+                    <p style = {{marginTop: "20px 0"}}>Cochez cette case si vous ne souhaitez pas prendre d’abonnement, vous achèterez donc vos paniers au fur et à mesure de vos besoins : 
+                        <input type="checkbox" />
+                    </p>
+
+                    <p id="lastPResume">Chaque semaine adaptez votre panier selon vos besoin en choisissant parmi nos 10 paniers différents.
+                    Notre abonnement est SANS ENGAGEMENT ! Mettez en pause ou résiliez quand vous voulez.</p>
+                    </div>
+                    
 
                 </div>
 
