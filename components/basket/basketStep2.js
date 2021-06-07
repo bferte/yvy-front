@@ -1,7 +1,7 @@
 import BasketCard from '../common/basketCard'
 
 
-const BasketStep2 = (...props) => {
+const BasketStep2 = (props) => {
 
 
     return (
@@ -9,7 +9,7 @@ const BasketStep2 = (...props) => {
             <style jsx>{`
             .containerStep2 {
                 width:100%;
-                display: ${props[0].display};
+                display: ${props.display};
                 justify-content: start;
                 flex-direction: column;
             }
@@ -77,6 +77,7 @@ const BasketStep2 = (...props) => {
             `}</style>
             <div className="containerStep2 fade-in-right">
                 <h2>Personnalisez votre abonnement</h2>
+                {console.log(props.display)}
                 <div className="customStep2">
                     <h3>2. Choisissez votre préférence de panier</h3>
 
