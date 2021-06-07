@@ -62,12 +62,6 @@ const Baskets = () => {
     }
 
 
-
-
-
-
-
-
     return (
         <>
             <style jsx>
