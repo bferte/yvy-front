@@ -1,8 +1,7 @@
+import React from 'react'
 
-const appc = () => {
-  return (
-          <p>ICI page concept</p>
-  )
-}
-
-export default appc
+export default React.createContext({
+  basket:"",
+  updateBasket: (name) => {}
+})
+  

@@ -87,6 +87,17 @@ const BasketStep2 = (props) => {
                         <BasketCard img="basket/panier-complet.png" price="26" description="Le panier classique et laitier réunis avec de la viande">Le complet</BasketCard>
                         <BasketCard img="basket/panier-repas.png" price="16" description="Panier pour composer des recettes de saison">Le spéciale recette</BasketCard>
                     </div>
+                    <div className="basketsResumeContainer">
+                        <div className="basketResume">
+                            <div className="basketPic"></div>
+                            <div className="resume">
+                                <span>Le classique</span>
+                                <p>Pour 1 personne : 2,5kg de fruits et légumes de saison</p>
+                                <p>Pour 2 personnes : 4kg de fruits et légumes de saison</p>
+                                <p>Pour 4 personnes : 6,5kg de fruits et légumes de saison</p>
+                            </div>
+                        </div>
+                    </div>
 
                 </div>
 
