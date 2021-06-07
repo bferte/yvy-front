@@ -19,14 +19,14 @@ function MyApp({ Component, pageProps }) {
   }
 
   return (
-    <AppContext.Provider>
+    //<AppContext.Provider>
       <Provider session={pageProps.session}>
         {Component.auth
           ? <Auth><Layout><Component {...pageProps} /></Layout></Auth>
           : <Layout><Component {...pageProps} /></Layout>
         }
       </Provider>
-    </AppContext.Provider>
+    //</AppContext.Provider>
 
   )
 }

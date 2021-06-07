@@ -1,7 +1,6 @@
 
 import { useState } from 'react'
 
-import BasketPreferenceButton from '../components/basket/BasketPreferenceButton'
 import Button from '../components/common/Button'
 import SizeStep1 from '../components/basket/sizeStep1'
 import BasketStep2 from '../components/basket/basketStep2'

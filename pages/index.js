@@ -211,7 +211,7 @@ export default function Home() {
       
       <div className="rootIndex">
 
-        <main className={styles.main}>
+        <main >
           <div className="containerResume">
             <div className="resume">
               <h2>Le plaisir de la bonne cuisine sans la corvée des courses !</h2>
