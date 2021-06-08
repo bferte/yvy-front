@@ -1,9 +1,9 @@
-import React, { useContext, useEffect } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 
 import Button from '../common/Button'
 
 
-import AppContext from '../../pages/AppContext'
+import AppContext from '../AppContext'
 
 const SizeStep1 = (...props) => {
 
@@ -13,14 +13,22 @@ const SizeStep1 = (...props) => {
 
        const [basketSize,setBasketSize] = useContext(AppContext);
 
+       const [activeBtn,setActiveBtn] = useState('')
+
        const sizeChoice = (event) => {
             setBasketSize(event.target.value)
+            setActiveBtn(event.target.value)
        }
+
+
+
+
 
 
        useEffect(() => {
            console.log(basketSize)
-           
+           console.log(activeBtn)
+
        })
            
 
@@ -61,6 +69,12 @@ const SizeStep1 = (...props) => {
                 background-color: var(--white);
                 border:none;
                 margin-bottom:40px;
+            }
+            .activeBtn {
+                background-color: var(--lightGreen);
+                color: var(--white);
+                opacity: 37%;
+                transition-duration: 1s;
             }
 
             @-webkit-keyframes fade-in-right {
@@ -113,11 +127,11 @@ const SizeStep1 = (...props) => {
                     <h3>1. Adaptez la taille de votre panier</h3>
                     <span>Nombre de personnes dans votre foyer :</span>
                     <div className="buttonNumbersContainer">
-                        <button onClick={sizeChoice} className="buttonNumbers" value={1}>1</button>
-                        <button onClick={sizeChoice} className="buttonNumbers" value={2}>2</button>
-                        <button onClick={sizeChoice} className="buttonNumbers" value={3}>3</button>
-                        <button onClick={sizeChoice} className="buttonNumbers" value={4}>4</button>
-                        <button onClick={sizeChoice} className="buttonNumbers" value={5}>5</button>
+                        <button onClick={sizeChoice} className={`buttonNumbers${basketSize == 1 ? " activeBtn" : ""}`} value={1}>1</button>
+                        <button onClick={sizeChoice} className={`buttonNumbers${basketSize == 2 ? " activeBtn" : ""}`} value={2}>2</button>
+                        <button onClick={sizeChoice} className={`buttonNumbers${basketSize == 3 ? " activeBtn" : ""}`} value={3}>3</button>
+                        <button onClick={sizeChoice} className={`buttonNumbers${basketSize == 4 ? " activeBtn" : ""}`} value={4}>4</button>
+                        <button onClick={sizeChoice} className={`buttonNumbers${basketSize == 5 ? " activeBtn" : ""}`} value={5}>5</button>
                     </div>
                     
                 </div>

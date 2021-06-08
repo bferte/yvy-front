@@ -7,7 +7,7 @@ import { useState } from 'react'
 
 import Layout from '../components/common/Layout'
 
-import AppContext from './AppContext'
+import AppContext from '../components/AppContext'
 
 function MyApp({ Component, pageProps }) {
 
