@@ -17,8 +17,10 @@ const SizeStep1 = (...props) => {
             setBasketSize(event.target.value)
        }
 
+
        useEffect(() => {
            console.log(basketSize)
+           
        })
            
 
@@ -111,11 +113,11 @@ const SizeStep1 = (...props) => {
                     <h3>1. Adaptez la taille de votre panier</h3>
                     <span>Nombre de personnes dans votre foyer :</span>
                     <div className="buttonNumbersContainer">
-                        <button onClick={sizeChoice} className="buttonNumbers" value={1} >1</button>
+                        <button onClick={sizeChoice} className="buttonNumbers" value={1}>1</button>
                         <button onClick={sizeChoice} className="buttonNumbers" value={2}>2</button>
-                        <button className="buttonNumbers">3</button>
-                        <button className="buttonNumbers">4</button>
-                        <button className="buttonNumbers">5</button>
+                        <button onClick={sizeChoice} className="buttonNumbers" value={3}>3</button>
+                        <button onClick={sizeChoice} className="buttonNumbers" value={4}>4</button>
+                        <button onClick={sizeChoice} className="buttonNumbers" value={5}>5</button>
                     </div>
                     
                 </div>
