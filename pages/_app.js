@@ -12,13 +12,13 @@ import AppContext from '../components/AppContext'
 function MyApp({ Component, pageProps }) {
 
   const basketSizeState = useState('')
-  //const basketTypeState = useState('')
+  const basketTypeState = useState('')
 
 
   //const [locale, setLocale] = React.useState('en')
  
   return (
-    <AppContext.Provider value={basketSizeState}>
+    <AppContext.Provider value={basketSizeState,basketTypeState}>
       <Provider session={pageProps.session}>
         {Component.auth
           ? <Auth><Layout><Component {...pageProps} /></Layout></Auth>

@@ -7,11 +7,9 @@ import AppContext from '../AppContext'
 
 const SizeStep1 = (props) => {
 
-        //const { basketSize, setBasketSize } = useContext(AppContext)
 
-       // setBasketSize(1)
 
-       const [basketSize,setBasketSize] = useContext(AppContext);
+       const [basketSize,setBasketSize,basketType,setBasketType] = useContext(AppContext);
 
        const [activeBtn,setActiveBtn] = useState('')
 
@@ -28,6 +26,7 @@ const SizeStep1 = (props) => {
        useEffect(() => {
            console.log(basketSize)
            console.log(activeBtn)
+
 
        })
            

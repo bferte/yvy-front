@@ -61,7 +61,7 @@ const BasketCard = ({ children, ...props }) => {
             }
 
             `}</style>
-            <div className="imgBasket">
+            <div className="imgBasket" onClick={props.clickEvent}>
                 <img src={props.img} alt="logo panier" />
             </div>
             <div className="txtBasketCard">
