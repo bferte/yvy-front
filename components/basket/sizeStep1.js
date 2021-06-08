@@ -5,7 +5,7 @@ import Button from '../common/Button'
 
 import AppContext from '../AppContext'
 
-const SizeStep1 = (...props) => {
+const SizeStep1 = (props) => {
 
         //const { basketSize, setBasketSize } = useContext(AppContext)
 
@@ -38,7 +38,7 @@ const SizeStep1 = (...props) => {
             <style jsx>{`
             .containerStep1 {
                 width:100%;
-                display: ${props[0].display};
+                display: ${props.display};
                 justify-content: start;
                 flex-direction: column;
             }

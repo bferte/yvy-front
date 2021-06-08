@@ -12,6 +12,8 @@ import AppContext from '../components/AppContext'
 function MyApp({ Component, pageProps }) {
 
   const basketSizeState = useState('')
+  //const basketTypeState = useState('')
+
 
   //const [locale, setLocale] = React.useState('en')
  

@@ -1,7 +1,15 @@
+import { useContext } from 'react'
+
 import BasketCard from '../common/basketCard'
 
+import AppContext from '../AppContext'
+
+ 
 
 const BasketStep2 = (props) => {
+
+    //const [basketType,setBasketType] = useContext(AppContext);
+
 
 
     return (
