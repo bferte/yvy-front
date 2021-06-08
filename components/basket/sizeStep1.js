@@ -1,11 +1,26 @@
+import React, { useContext, useEffect } from 'react'
+
 import Button from '../common/Button'
+
 
 import AppContext from '../../pages/AppContext'
 
 const SizeStep1 = (...props) => {
 
+        //const { basketSize, setBasketSize } = useContext(AppContext)
 
+       // setBasketSize(1)
 
+       const [basketSize,setBasketSize] = useContext(AppContext);
+
+       const sizeChoice = (event) => {
+            setBasketSize(event.target.value)
+       }
+
+       useEffect(() => {
+           console.log(basketSize)
+       })
+           
 
 
     return (
@@ -81,6 +96,8 @@ const SizeStep1 = (...props) => {
             `}</style>
             <div className="containerStep1 fade-in-right">
                 <h2>Personnalisez votre abonnement</h2>
+
+                
                 <AppContext.Consumer>
                 {(data) => {
                     return (
@@ -94,8 +111,8 @@ const SizeStep1 = (...props) => {
                     <h3>1. Adaptez la taille de votre panier</h3>
                     <span>Nombre de personnes dans votre foyer :</span>
                     <div className="buttonNumbersContainer">
-                        <button className="buttonNumbers">1</button>
-                        <button className="buttonNumbers">2</button>
+                        <button onClick={sizeChoice} className="buttonNumbers" value={1} >1</button>
+                        <button onClick={sizeChoice} className="buttonNumbers" value={2}>2</button>
                         <button className="buttonNumbers">3</button>
                         <button className="buttonNumbers">4</button>
                         <button className="buttonNumbers">5</button>

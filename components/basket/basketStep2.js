@@ -103,7 +103,6 @@ const BasketStep2 = (props) => {
             `}</style>
             <div className="containerStep2 fade-in-right">
                 <h2>Personnalisez votre abonnement</h2>
-                {console.log(props.display)}
                 <div className="customStep2">
                     <h3>2. Choisissez votre préférence de panier</h3>
 
