@@ -4,7 +4,7 @@ const BasketCard = ({ children, ...props }) => {
 
 
     return (
-        <div className='cardBasket'>
+        <div className='cardBasket' onClick={props.onClick}>
             <style jsx>{`
           
             .cardBasket {
@@ -61,7 +61,7 @@ const BasketCard = ({ children, ...props }) => {
             }
 
             `}</style>
-            <div className="imgBasket" onClick={props.clickEvent}>
+            <div className="imgBasket">
                 <img src={props.img} alt="logo panier" />
             </div>
             <div className="txtBasketCard">

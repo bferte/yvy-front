@@ -45,10 +45,12 @@ const Baskets = () => {
         toggleStep()
         */
 
-        console.log(formStep)
+        //console.log(formStep)
 
         setFormStep(formStep + 1)
         toggleStep()
+        window.scrollTo(0,0);
+        
 
         
 
