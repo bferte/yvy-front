@@ -1,7 +1,11 @@
 
-
+import { useState, useEffect } from 'react'
 const BasketCard = ({ children, ...props }) => {
 
+    const [isActive,setIsActive] = useState(false)
+
+
+   
 
     return (
         <div className='cardBasket' onClick={props.onClick}>
@@ -60,8 +64,13 @@ const BasketCard = ({ children, ...props }) => {
                 text-decoration: underline;
             }
 
+            .active {
+                background-color: rgba(239,170,69,0.26);
+            }
+
             `}</style>
-            <div className="imgBasket">
+            {console.log.props}
+            <div className={`imgBasket${props.activeCard == props.value ? " active" : ""}`}>
                 <img src={props.img} alt="logo panier" />
             </div>
             <div className="txtBasketCard">

@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from 'react'
 
 import BasketCard from '../common/basketCard'
+import CartResume from '../cart/cartResume'
 
 import AppContext from '../AppContext'
 
@@ -11,11 +12,27 @@ const BasketStep2 = (props) => {
    // const [basketSize,setBasketSize] = useContext(AppContext);
     // [basketType,setBasketType] = useContext(AppContext);
 
-    const [activeCard,setActiveCard] = useContext(AppContext);
+    //const [activeCard,setActiveCard] = useContext(AppContext);
+
+    const basketContext = useContext(AppContext)
+    const [isActive,setIsActive] = useState(false)
+    //const [basketType,setBasketType] = useState();
+
+
+    
+
 
 
     const typeChoice = (value) => {
         
+        basketContext.setType(value)
+        console.log(basketContext.type)
+        
+        
+
+
+
+
        // setBasketType(value)
        // console.log(basketType)
        // console.log(basketSize)
@@ -137,7 +154,6 @@ const BasketStep2 = (props) => {
             `}</style>
             <div className="containerStep2 fade-in-right">
                 <h2>Personnalisez votre abonnement</h2>
-                <button onClick={typeChoice} value={"test"}>ici</button>
                 <div className="customStep2">
                     <h3>2. Choisissez votre préférence de panier</h3>
 
@@ -145,11 +161,15 @@ const BasketStep2 = (props) => {
                         <div className="test">
                             
                         </div>
-                        <BasketCard  img="basket/panier-classique.png" price="12,50" description="Fruits et légumes de saison pour la semaine" onClick={() => typeChoice(('classique'))}>Le classique</BasketCard>
-                        <BasketCard img="basket/panier-laitier.png" price="20" description="Fruits et légumes de saison avec du lait, des œufs et du fromage" onClick={() => typeChoice(('laitier'))}>Le laitier</BasketCard>
-                        <BasketCard img="basket/panier-complet.png" price="26" description="Le panier classique et laitier réunis avec de la viande" onClick={() => typeChoice(('complet'))}>Le complet</BasketCard>
-                        <BasketCard img="basket/panier-repas.png" price="16" description="Panier pour composer des recettes de saison" onClick={() => typeChoice(('recette'))}>Le spéciale recette</BasketCard>
+                        <BasketCard  img="basket/panier-classique.png" price="12,50" description="Fruits et légumes de saison pour la semaine" value={'classique'} activeCard={basketContext.type} onClick={() => typeChoice(('classique'))}>Le classique</BasketCard>
+
+                        <BasketCard img="basket/panier-laitier.png" price="20" description="Fruits et légumes de saison avec du lait, des œufs et du fromage" value={'laitier'} activeCard={basketContext.type} onClick={() => typeChoice(('laitier'))}>Le laitier</BasketCard>
+
+                        <BasketCard img="basket/panier-complet.png" price="26" description="Le panier classique et laitier réunis avec de la viande" value={'complet'} activeCard={basketContext.type} onClick={() => typeChoice(('complet'))}>Le complet</BasketCard>
+                        
+                        <BasketCard img="basket/panier-repas.png" price="16" description="Panier pour composer des recettes de saison" value={'recette'} activeCard={basketContext.type} onClick={() => typeChoice(('recette'))}>Le spéciale recette</BasketCard>
                     </div>
+                    <CartResume/>
                     <div className="basketsResumeContainer">
                         <div className="basketResume">
                             <div className="basketPic">

@@ -160,7 +160,7 @@ export default function Login() {
                         if (response.error) {
                             setError(response.error)
                         } else if (response.ok) {
-                            router.push("/")
+                            router.push("/baskets")
                         }
                     }}
                 >Je me connecte</Button>
