@@ -1,19 +1,36 @@
+import { useEffect,useState } from 'react'
 import Button from "../common/Button"
 
-const CarteResume = () => {
+const CartResume = (props) => {
+
+    const [titleResume,setTitleResume] = useState()
+
+    useEffect(() => {
+       setTitleResume(props.titleResume)
+    }, [])
+
     return (
             <>
+
+            
             <style jsx>
                 {`
+                img {
+                    height: 322px;
+                    border-radius: 62px;
+
+                }
                 
                 `}
             </style>
             <div className="cartResumeContainer">
+                {console.log(props.titleResume)}
                 <div className="imgResume">
-                    <img src="" alt="" srcset="" />
+                    <img src="basket/panier-laitier-1.jpg" alt=""  />
                 </div>
                 <div className="resume">
-                    <span></span>
+                    
+                    <span>{props.titleResume}</span>
                     <p></p>
                     <span></span>
                     <div className="resumeQuantity">
@@ -35,4 +52,6 @@ const CarteResume = () => {
     )
 }
 
-export default CarteResume
+
+
+export default CartResume

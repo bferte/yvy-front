@@ -5,11 +5,16 @@ import Button from '../components/common/Button'
 import SizeStep1 from '../components/basket/sizeStep1'
 import BasketStep2 from '../components/basket/basketStep2'
 
-const Baskets = () => {
+const Baskets = ({basketData}) => {
 
     const [formStep, setFormStep] = useState(1);
     const [visible1, setVisible1] = useState("flex");
     const [visible2, setVisible2] = useState("none");
+
+    //const basket1 = basketData[0]
+    // const basket2 = basketData[1]
+    // const basket3 = basketData[2]
+    // const basket4 = basketData[3]
 
     function toggleStep() {
         if (visible1 == "none") {
@@ -78,8 +83,9 @@ const Baskets = () => {
             </style>
             <div className="basketChoice">
                 {formStep}
+                
                 <SizeStep1 display={visible1}></SizeStep1>
-                <BasketStep2 display={visible2}></BasketStep2>
+                <BasketStep2 display={visible2} basketData={basketData}></BasketStep2>
 
                 {
                     formStep < 2
@@ -103,7 +109,24 @@ const Baskets = () => {
             </div>
         </>
 
+
     )
 }
+export async function getStaticProps() {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/baskets`);
+    const basketData = await res.json();
+    console.log(basketData)
+    
+
+    return {
+        
+        props: {
+            basketData,
+        }
+    }
+
+}
+
+
 
 export default Baskets

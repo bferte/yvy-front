@@ -147,6 +147,7 @@ export default function Home() {
         
         .listAdvantage {
           display:flex;
+          margin-left: 4%;
           
         }
         .advantage {
@@ -251,6 +252,7 @@ export default function Home() {
             </div>
           </div>
           <div className="orangeContainer">
+
             <div className="orangeContent">
               <h3>Bon pour vous, bon pour la planète, bon pour votre porte-monnaie !</h3>
               <div className="listAdvantage">
