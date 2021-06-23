@@ -11,6 +11,7 @@ import AppContext from '../components/AppContext'
 import BasketResumeContext from '../components/BasketResumeContext'
 
 
+
 function MyApp({ Component, pageProps }) {
 
 const [size,setSize] = useState('')
@@ -23,7 +24,28 @@ const basketState = {
     setType
   }
 
+  const [title1,setTitle1] = useState('')
+  const [resume1,setResume1] = useState('')
+  const [title2,setTitle2] = useState('')
+  const [resume2,setResume2] = useState('')
+  const [title3,setTitle3] = useState('')
+  const [resume3,setResume3] = useState('')
+  const [title4,setTitle4] = useState('')
+  const [resume4,setResume4] = useState('')
+  
+  
   const basketResume = {
+    title1,
+    setTitle1,
+    resume1,
+    setResume1,
+    title2,
+    setTitle2,
+    resume3,
+    setResume3,
+    title4,
+    setTitle4
+
 
   }
 
@@ -60,4 +82,7 @@ function Auth({ children }) {
   // If no user, useEffect() will redirect.
   return <div>Loading...</div>
 }
+
+
+
 export default MyApp

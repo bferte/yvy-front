@@ -91,13 +91,7 @@ const Baskets = ({basketData}) => {
                     : null
 
                 }
-                {
-                    formStep == 3 
-                    ? <Button >
-                    Régler la commande
-                    </Button>
-                    : null
-                }
+                
                 
             </div>
         </>
@@ -108,13 +102,13 @@ const Baskets = ({basketData}) => {
 export async function getStaticProps() {
     const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/baskets`);
     const basketData = await res.json();
-    console.log(basketData)
+    console.log('res',basketData)
     
 
     return {
         
         props: {
-            basketData,
+            basketData : basketData,
         }
     }
 

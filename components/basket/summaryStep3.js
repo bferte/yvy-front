@@ -1,46 +1,49 @@
 import { useContext, useEffect, useState } from 'react'
+import { loadStripe } from "@stripe/stripe-js";
 
+import Button from '../common/Button';
 import BasketCard from '../common/basketCard'
 import CartResume from '../cart/cartResume'
 
 import AppContext from '../AppContext'
 
+
+
+
+
+///////// stripe
  
+const stripePromise = loadStripe("pk_test_51J0o5eD92IwnR52qSM1ehhDupp2Cs8WWorvJF3L3bLC8shPHnuwsUoLBCtzsHWFdSAczA4eYxe1RIRS42EMEnS5R00IjsQH1Lk");
+
+
+
+const handleClick = async (event) => {
+    const stripe = await stripePromise;
+    const response = await fetch("/api/payment", {
+      method: "POST",
+      body: JSON.stringify({price: 16, title: 'panier laitier'})
+    });
+    const session = await response.json();
+    // When the customer clicks on the button, redirect them to Checkout.
+    const result = await stripe.redirectToCheckout({
+      sessionId: session.id,
+    });
+    if (result.error) {
+      // If `redirectToCheckout` fails due to a browser or network
+      // error, display the localized error message to your customer
+      // using `result.error.message`.
+    }
+  };
+
+
+
+//////////
 
 const SummaryStep3 = (props) => {
 
-   // const [basketSize,setBasketSize] = useContext(AppContext);
-    // [basketType,setBasketType] = useContext(AppContext);
-
-    //const [activeCard,setActiveCard] = useContext(AppContext);
-
+   
     const basketContext = useContext(AppContext)
-    const [isActive,setIsActive] = useState(false)
 
-    const [titleResume,setTitleResume] = useState();
-    const [descriptionResume, setDescriptionResume] = useState();
-
-    
-
-    
-
-
-
-    const typeChoice = (value,title) => {
-        
-        basketContext.setType(value)
-        setTitleResume(title)
-        console.log(titleResume)
-        //console.log(props.basketData[1].title)
-
-
-
-        
-        
-        
-        
-         
-    }
 
     
 
@@ -70,6 +73,7 @@ const SummaryStep3 = (props) => {
             .containerStep3 {
                 display:flex;
                 flex-direction:column;
+                margin-bottom: 50px;
             }
             .summary-container {
                 height: 518px;
@@ -114,6 +118,7 @@ const SummaryStep3 = (props) => {
             }
             .priceTotalContainer {
                 font-weight: bold;
+                margin-bottom:50px;
             }
             
             
@@ -151,13 +156,13 @@ const SummaryStep3 = (props) => {
             `}</style>
             <div className="containerStep3 fade-in-right">
                 <h2>Personnalisez votre abonnement</h2>
-
+                <p>{basketContext.type}</p>
                 <div className="summary-container">
                     <h3>Résumé de votre commande</h3>
                     <div className="resume">
                         <img src="./basket/panier-classique.png" alt="" />
                         <div className="sub-resume">
-                            <span className="titleBasket">panier laitier</span>
+                            <span className="titleBasket">Panier {basketContext.type}</span>
                             <p className="resumeBasket">loredqshgd dqsd uyg g g gg uygugg </p>
                         </div>
                     </div>
@@ -176,12 +181,12 @@ const SummaryStep3 = (props) => {
                         <span className="priceTotal">test</span>
                     </div>
 
+                    <Button clickEvent={handleClick} width="160px">
+                        Régler la commande
+                        </Button>
+
                 </div>
-                <div className="testStripe">
-                    <span>test stripe</span>
-                    <button id="checkout-button">Checkout</button>
-                    <script src="https://js.stripe.com/v3/"></script>
-                </div>
+               
                 
                 
 

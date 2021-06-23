@@ -9,19 +9,27 @@ const BasketResumeContext = React.createContext({
   setResume1: () => {
 
   },
-  title1 : "",
-  setTitle1: () => {
+  title2 : "",
+  setTitle2: () => {
 
   },
-  resume1: "",
-  setResume1: () => {
+  resume2: "",
+  setResume2: () => {
 
-  },title1 : "",
-  setTitle1: () => {
+  },title3 : "",
+  setTitle3: () => {
 
   },
-  resume1: "",
-  setResume1: () => {
+  resume3: "",
+  setResume3: () => {
+
+  },
+  title4 : "",
+  setTitle4: () => {
+
+  },
+  resume4: "",
+  setResume4: () => {
 
   },
   
