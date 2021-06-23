@@ -8,6 +8,8 @@ import { useState } from 'react'
 import Layout from '../components/common/Layout'
 
 import AppContext from '../components/AppContext'
+import BasketResumeContext from '../components/BasketResumeContext'
+
 
 function MyApp({ Component, pageProps }) {
 
@@ -20,12 +22,15 @@ const basketState = {
     type,
     setType
   }
-  //const basketTypeState = useState('')
+
+  const basketResume = {
+
+  }
 
 
-  //const [locale, setLocale] = React.useState('en')
  
   return (
+    <BasketResumeContext.Provider value={basketResume}>
     <AppContext.Provider value={basketState}>
       <Provider session={pageProps.session}>
         {Component.auth
@@ -34,6 +39,7 @@ const basketState = {
         }
       </Provider>
     </AppContext.Provider>
+    </BasketResumeContext.Provider>
 
   )
 }
