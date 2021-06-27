@@ -1,5 +1,5 @@
 
-import { useState, useContext } from 'react'
+import { useState, useContext,useEffect } from 'react'
 
 import Button from '../components/common/Button'
 import SizeStep1 from '../components/basket/sizeStep1'
@@ -18,7 +18,10 @@ const Baskets = ({basketData}) => {
     
 
 
-    basketResume.setTitle1(basketData[0].title)
+    
+    
+ useEffect(() => {
+     basketResume.setTitle1(basketData[0].title)
     basketResume.setResume1(basketData[0].description)
     basketResume.setTitle2(basketData[1].title)
     basketResume.setResume2(basketData[1].description)
@@ -26,13 +29,12 @@ const Baskets = ({basketData}) => {
     basketResume.setResume3(basketData[2].description)
     basketResume.setTitle4(basketData[3].title)
     basketResume.setResume4(basketData[3].description)
-    
- 
+     
+ }, [])
 
 
 
 
-    console.log(basketResume)
 
     let stepDisplay
     if (formStep == 1) {
@@ -55,7 +57,7 @@ const Baskets = ({basketData}) => {
 
     function backStep() {
         setFormStep(formStep - 1)
-        console.log(formStep)
+        //console.log(formStep)
 
     }
 
@@ -73,7 +75,6 @@ const Baskets = ({basketData}) => {
                 `}
             </style>
             <div className="basketChoice">
-                {formStep}
                 
                
                 {
@@ -117,7 +118,7 @@ const Baskets = ({basketData}) => {
 export async function getStaticProps() {
     const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/baskets`);
     const basketData = await res.json();
-    console.log('res',basketData)
+   // console.log('res',basketData)
     
 
     return {

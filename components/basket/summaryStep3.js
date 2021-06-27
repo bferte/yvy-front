@@ -209,8 +209,7 @@ const handleClick = async (event) => {
             `}</style>
             <div className="containerStep3 fade-in-right">
                 <h2>Personnalisez votre abonnement</h2>
-                {console.log(basketContext)}
-                {console.log(basketResume)}
+              
 
                 <p>{basketContext.type}</p>
                 <div className="summary-container">
