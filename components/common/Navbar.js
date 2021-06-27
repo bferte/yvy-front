@@ -43,6 +43,7 @@ const Navbar = () => {
             window.removeEventListener("scroll", this.handleScroll);
 
         }
+    
         
 
     }, [])
@@ -58,7 +59,6 @@ const Navbar = () => {
             } else {
                 setHidde(true)
             }
-
             
 
 

@@ -1,18 +1,38 @@
 
-import { useState } from 'react'
+import { useState, useContext } from 'react'
 
 import Button from '../components/common/Button'
 import SizeStep1 from '../components/basket/sizeStep1'
 import BasketStep2 from '../components/basket/basketStep2'
 import SummaryStep3 from '../components/basket/summaryStep3'
 
+import BasketResumeContext from '../components/BasketResumeContext'
+
 const Baskets = ({basketData}) => {
 
     const [formStep, setFormStep] = useState(1);
-    const [visible1, setVisible1] = useState("flex");
-    const [visible2, setVisible2] = useState("none");
-    const [visible3, setVisible3] = useState("none");
+  
 
+    const basketResume = useContext(BasketResumeContext)
+
+    
+
+
+    basketResume.setTitle1(basketData[0].title)
+    basketResume.setResume1(basketData[0].description)
+    basketResume.setTitle2(basketData[1].title)
+    basketResume.setResume2(basketData[1].description)
+    basketResume.setTitle3(basketData[2].title)
+    basketResume.setResume3(basketData[2].description)
+    basketResume.setTitle4(basketData[3].title)
+    basketResume.setResume4(basketData[3].description)
+    
+ 
+
+
+
+
+    console.log(basketResume)
 
     let stepDisplay
     if (formStep == 1) {
@@ -24,12 +44,7 @@ const Baskets = ({basketData}) => {
     if (formStep == 3) {
         stepDisplay =  <SummaryStep3></SummaryStep3>
     }
-    //const basket1 = basketData[0]
-    // const basket2 = basketData[1]
-    // const basket3 = basketData[2]
-    // const basket4 = basketData[3]
 
-    
 
      function nextStep() {
     

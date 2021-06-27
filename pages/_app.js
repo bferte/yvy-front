@@ -41,10 +41,17 @@ const basketState = {
     setResume1,
     title2,
     setTitle2,
+    resume2,
+    setResume2,
+    title3,
+    setTitle3,
     resume3,
     setResume3,
     title4,
-    setTitle4
+    setTitle4,
+    resume4,
+    setResume4,
+    
 
 
   }

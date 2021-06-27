@@ -4,12 +4,8 @@ export default async function handler(req, res) {
         const stripe = require('stripe')('sk_test_51J0o5eD92IwnR52qbZd5LVfSmqmWVget2K07R6bTZOaJhDacJ9lRpanIGRA6uz4MYKiO1B82s4fZUCamPkZm8XR300SOd7v2VH');
 
         let data = JSON.parse(req.body)
-        
 
-        
-
-
-        const YOUR_DOMAIN = `${process.env.NEXT_URL}/checkout`;
+        const YOUR_DOMAIN = `${process.env.NEXT_URL}`;
 
         
             const session = await stripe.checkout.sessions.create({
@@ -20,7 +16,8 @@ export default async function handler(req, res) {
                     currency: 'eur',
                     product_data: {
                       name: data.title,
-                      images: ['https://i.imgur.com/EHyR2nP.png'],
+                      //images: ['https://i.imgur.com/EHyR2nP.png'],
+                      images: [data.imageUrl]
                     },
                     unit_amount: data.price*100,
                   },
@@ -28,7 +25,7 @@ export default async function handler(req, res) {
                 },
               ],
               mode: 'payment',
-              success_url: `${YOUR_DOMAIN}`,
+              success_url: `${YOUR_DOMAIN}/succes`,
               cancel_url: `${YOUR_DOMAIN}`,
             });
             res.json({ id: session.id });

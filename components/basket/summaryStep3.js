@@ -6,22 +6,29 @@ import BasketCard from '../common/basketCard'
 import CartResume from '../cart/cartResume'
 
 import AppContext from '../AppContext'
+import BasketResumeContext from '../BasketResumeContext';
 
 
 
 
 
-///////// stripe
+
+
+//////////
+
+const SummaryStep3 = (props) => {
+
+
+    ///////// stripe
  
 const stripePromise = loadStripe("pk_test_51J0o5eD92IwnR52qSM1ehhDupp2Cs8WWorvJF3L3bLC8shPHnuwsUoLBCtzsHWFdSAczA4eYxe1RIRS42EMEnS5R00IjsQH1Lk");
-
 
 
 const handleClick = async (event) => {
     const stripe = await stripePromise;
     const response = await fetch("/api/payment", {
       method: "POST",
-      body: JSON.stringify({price: 16, title: 'panier laitier'})
+      body: JSON.stringify({price: priceTTC, title: 'panier '+basketContext.type,imageUrl})
     });
     const session = await response.json();
     // When the customer clicks on the button, redirect them to Checkout.
@@ -34,15 +41,59 @@ const handleClick = async (event) => {
       // using `result.error.message`.
     }
   };
-
-
-
-//////////
-
-const SummaryStep3 = (props) => {
-
+////
    
     const basketContext = useContext(AppContext)
+    const basketResume = useContext(BasketResumeContext)
+
+    function roundDecimal(nombre, precision){
+        var precision = precision || 2;
+        var tmp = Math.pow(10, precision);
+        return Math.round( nombre*tmp )/tmp;
+    }
+
+    let description
+    let urlPic
+    let imageUrl
+
+    let priceTTC
+    if (basketContext.type == "classique") {
+        priceTTC = 12,5
+        description = basketResume.resume1
+        urlPic = 'basket/panier-classique.png'
+        imageUrl = "https://yvy-back.herokuapp.com/uploads/thumbnail_Illu_panier_classique_1802ab85dc.png"
+
+    }
+    if (basketContext.type == "laitier") {
+        priceTTC = 20
+        description = basketResume.resume2
+        urlPic = 'basket/panier-laitier.png'
+        imageUrl = "https://yvy-back.herokuapp.com/uploads/panier_laitier_003f900b58.png"
+    }
+    if (basketContext.type == "complet") {
+        priceTTC = 26
+        description = basketResume.resume3
+        urlPic = 'basket/panier-complet.png'
+        imageUrl = "https://yvy-back.herokuapp.com/uploads/panier_complet_125ea525d4.png"
+    }
+    if (basketContext.type == "recette") {
+        priceTTC = 16
+        description = basketResume.resume4
+        urlPic = 'basket/panier-repas.png'
+        imageUrl = "https://yvy-back.herokuapp.com/uploads/panier_repas_7bb4fd146f.png"
+    }
+
+
+    let TVA = roundDecimal(priceTTC * 0.2)
+
+    let priceHT = priceTTC - TVA 
+
+
+
+
+
+
+    
 
 
     
@@ -53,6 +104,7 @@ const SummaryStep3 = (props) => {
 
         
     }, [])
+    
     
 
 
@@ -91,6 +143,7 @@ const SummaryStep3 = (props) => {
             }
             .resume img {
                 height: 65px;
+                margin-left:15px;
                 
             }
             .sub-resume {
@@ -156,34 +209,37 @@ const SummaryStep3 = (props) => {
             `}</style>
             <div className="containerStep3 fade-in-right">
                 <h2>Personnalisez votre abonnement</h2>
+                {console.log(basketContext)}
+                {console.log(basketResume)}
+
                 <p>{basketContext.type}</p>
                 <div className="summary-container">
                     <h3>Résumé de votre commande</h3>
                     <div className="resume">
-                        <img src="./basket/panier-classique.png" alt="" />
+                        <img src={urlPic} alt="" />
                         <div className="sub-resume">
                             <span className="titleBasket">Panier {basketContext.type}</span>
-                            <p className="resumeBasket">loredqshgd dqsd uyg g g gg uygugg </p>
+                            <p className="resumeBasket">{description}</p>
                         </div>
                     </div>
                     <hr color="#EFAA45"/>
                     <div className="priceHTContainer">
                         <span>Prix du panier HT</span>
-                        <span className="price">test</span>
+                        <span className="price">{priceHT}€</span>
                     </div>
                     <div className="priceTVAContainer">
                         <span>TVA</span>
-                        <span className="priceTVA">test</span>
+                        <span className="priceTVA">{TVA}€</span>
                     </div>
                     <hr color="#EFAA45"/>
                     <div className="priceTotalContainer">
                         <span>Total</span>
-                        <span className="priceTotal">test</span>
+                        <span className="priceTotal">{priceTTC}€</span>
                     </div>
 
                     <Button clickEvent={handleClick} width="160px">
                         Régler la commande
-                        </Button>
+                    </Button>
 
                 </div>
                
