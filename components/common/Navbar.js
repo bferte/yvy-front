@@ -163,7 +163,7 @@ const Navbar = () => {
                                             e.preventDefault()
                                             signOut()
                                         }}
-                                    >Logout
+                                    ><Button width="100px" margin="10px">Déconnexion</Button>
                                     </a>
                                 </div>
                                 :

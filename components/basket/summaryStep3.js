@@ -122,10 +122,38 @@ const handleClick = async (event) => {
                 font-size: 38px;
                 margin: 19px 0;
             }
+            .choice1 p,.choice2 p{
+                font-weight:600;
+                color: var(--darkGreen);
+                width:90%;
+            }
+            label{
+                font-weight:600;
+            }
             .containerStep3 {
                 display:flex;
                 flex-direction:column;
                 margin-bottom: 50px;
+            }
+            .deliveryContainer{
+                display:flex;
+                justify-content:row;
+            }
+            .lastKilometer {
+                margin-top: 70px;
+                display:flex;
+                justify-content:row
+            }
+            .lastKilometer img {
+                width: 47px;
+                height: 42px;
+                margin-top:15px;
+            }
+            .lastKilometer span {
+                font-weight:600;
+            }
+            .lastKilometerResume {
+                margin-left: 40px;
             }
             .summary-container {
                 height: 518px;
@@ -137,6 +165,8 @@ const handleClick = async (event) => {
                 flex-direction:column;
                 align-items:center;
                 text-align:center;
+                position:relative;
+                bottom:90px;
             }
             .resume{
                 display:flex;
@@ -210,8 +240,47 @@ const handleClick = async (event) => {
             <div className="containerStep3 fade-in-right">
                 <h2>Personnalisez votre abonnement</h2>
               
+                <h3>3. Livraison</h3>
+                <div className="deliveryContainer">
+                    <div className="deliveryChoice">
+                    <div className="choice1">
+                        <p>Selon votre code entreprise vous travaillez chez StartUUp, est-ce bien cela ?</p>
+                        <div className="choice1Radio">
+                            <div>
+                                <input type="radio" id="oui" name="choice1" value="Oui"
+                                        checked/>
+                                <label for="huey">Oui</label>
+                            </div>
 
-                <p>{basketContext.type}</p>
+                            <div>
+                                <input type="radio" id="non" name="choice1" value="non"/>
+                                <label for="dewey">Non</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="choice2">
+                        <p>Votre entreprise à choisi d’être livrée le mardi et le jeudi, quel jour souhaitez vous être livré ?</p>
+                        <div className="choice1Radio">
+                            <div>
+                                <input type="radio" id="mardi" name="choice2" value="mardi"
+                                        checked/>
+                                <label for="huey">Mardi</label>
+                            </div>
+
+                            <div>
+                                <input type="radio" id="jeudi" name="choice2" value="jeudi"/>
+                                <label for="dewey">Jeudi</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="lastKilometer">
+                        <img src="leaf.png" alt="dessin d'une feuille"/>
+                        <div className="lastKilometerResume">
+                            <span>Vert jusqu’au dernier kilomètre</span>
+                            <p>Livraison neutre en carbone. Nous vous livrons grâce à des véhicules électriques </p>
+                        </div>
+                    </div>
+                </div>
                 <div className="summary-container">
                     <h3>Résumé de votre commande</h3>
                     <div className="resume">
@@ -241,7 +310,8 @@ const handleClick = async (event) => {
                     </Button>
 
                 </div>
-               
+                </div>
+                
                 
                 
 

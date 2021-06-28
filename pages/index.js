@@ -28,14 +28,18 @@ export default function Home() {
           display : flex;
           align-items : center;
           margin : 0 375px;
+
         }
         .resume h2 {
           color : var(--darkGreen);
         }
         .resume {
-          height: 700px;
+          height: 400px;
           width: 586px;
           margin-right: 85px;
+          position:relative;
+          right:208px;
+       
          
         }
         .basketFull {
@@ -43,7 +47,7 @@ export default function Home() {
           background-repeat: no-repeat;
           background-size: cover;
           background-position: center;
-          width: 50%;
+          width: 42%;
           right: 0;
           position:absolute;
           display: flex;

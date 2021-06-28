@@ -146,19 +146,13 @@ const BasketStep2 = (props) => {
             `}</style>
             <div className="containerStep2 fade-in-right">
                 <h2>Personnalisez votre abonnement</h2>
-                <div className="testStripe">
-                    <span>test stripe</span>
-                    <button id="checkout-button">Checkout</button>
-                    <script src="https://js.stripe.com/v3/"></script>
-                </div>
+                
                 
                 <div className="customStep2">
                     <h3>2. Choisissez votre préférence de panier</h3>
                 
                     <div className="navBaskets">
-                        <div className="test">
-                            
-                        </div>
+                       
                         <BasketCard  img="basket/panier-classique.png" 
                                      price="12,50" 
                                      description="Fruits et légumes de saison pour la semaine" 
@@ -173,7 +167,6 @@ const BasketStep2 = (props) => {
                         
                         <BasketCard img="basket/panier-repas.png" price="16" description="Panier pour composer des recettes de saison" value={'recette'} activeCard={basketContext.type} onClick={() => typeChoice('recette')}>Le spéciale recette</BasketCard>
                     </div>
-                    <CartResume titleResume={titleResume}/>
                     <div className="basketsResumeContainer">
                         <div className="basketResume">
                             <div className="basketPic">
